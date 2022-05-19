@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/UpWindScheme/UpWindScheme.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_b27b1382bb48f0ab49a74649e2140b82.html">UpWindScheme</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">UpWindScheme.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Four classical upwind schemes for LINEAR hyperbolic equations  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="configration_8h_source.html">configration.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+UpWindScheme.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp__incl.png" border="0" usemap="#a_f_1_2_c_09_09code_2_riemann_solver_2_up_wind_scheme_2_up_wind_scheme_8cpp" alt=""/></div>
+<map name="a_f_1_2_c_09_09code_2_riemann_solver_2_up_wind_scheme_2_up_wind_scheme_8cpp" id="a_f_1_2_c_09_09code_2_riemann_solver_2_up_wind_scheme_2_up_wind_scheme_8cpp">
+<area shape="rect" title="Four classical upwind schemes for LINEAR hyperbolic equations" alt="" coords="52,5,295,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,77,121"/>
+<area shape="rect" title=" " alt="" coords="101,95,160,121"/>
+<area shape="rect" title=" " alt="" coords="185,95,250,121"/>
+<area shape="rect" href="configration_8h.html" title="Configrations of the 1st order upwind schemes." alt="" coords="275,95,373,121"/>
+</map>
+</div>
+</div>
+<p><a href="_up_wind_scheme_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a380d0ad29e39dccf06db706e076eb7a1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">Godunov</a> (double ul, double ur)</td></tr>
+<tr class="memdesc:a380d0ad29e39dccf06db706e076eb7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Godunov flux (at the point x_{i+1/2})  <a href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">更多...</a><br /></td></tr>
+<tr class="separator:a380d0ad29e39dccf06db706e076eb7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556dbc8c886c1e22bf72645c5ce76f43"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">LFflux</a> (double ul, double ur)</td></tr>
+<tr class="memdesc:a556dbc8c886c1e22bf72645c5ce76f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lax-Fridrichs flux( at the point x_{i+1/2})  <a href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">更多...</a><br /></td></tr>
+<tr class="separator:a556dbc8c886c1e22bf72645c5ce76f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50faba20b4d0b7eaa89d2a61da7057c0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">LWflux</a> (double ul, double ur)</td></tr>
+<tr class="memdesc:a50faba20b4d0b7eaa89d2a61da7057c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lax-Wendroff flux ( at the point x_{i+1/2})  <a href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">更多...</a><br /></td></tr>
+<tr class="separator:a50faba20b4d0b7eaa89d2a61da7057c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a7082c0d696dcd59ada37bde0299e6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">WBflux</a> (double ul, double ur)</td></tr>
+<tr class="memdesc:a30a7082c0d696dcd59ada37bde0299e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warming and Beam flux (at the point x_{i+1/2})  <a href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">更多...</a><br /></td></tr>
+<tr class="separator:a30a7082c0d696dcd59ada37bde0299e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b4064b6105d6acafe7d8bbf4ffb654"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a> (double(*flux)(double, double))</td></tr>
+<tr class="memdesc:a38b4064b6105d6acafe7d8bbf4ffb654"><td class="mdescLeft">&#160;</td><td class="mdescRight">The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1/2} (u_{i-1}, u_i)  <a href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">更多...</a><br /></td></tr>
+<tr class="separator:a38b4064b6105d6acafe7d8bbf4ffb654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8f0953b1eaab15b5b0c0db91f22e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a> (double *uh, const char *fn)</td></tr>
+<tr class="memdesc:a7e8f0953b1eaab15b5b0c0db91f22e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plot the results of the numerical solution and the exact solution  <a href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">更多...</a><br /></td></tr>
+<tr class="separator:a7e8f0953b1eaab15b5b0c0db91f22e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Gauss-Lobatto quadrature</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Gauss-Lobatto quadrature points and coefficients. Used to compute the cell average. </p>
+</div></td></tr>
+<tr class="memitem:a6952a69e87712af6a35b603b1b5053a2"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#a6952a69e87712af6a35b603b1b5053a2">lobattopoint</a> [5] = {-1.0, -0.6546536707079771, 0, 0.6546536707079771, 1.0}</td></tr>
+<tr class="separator:a6952a69e87712af6a35b603b1b5053a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d98296797d277411e03d4a57c54475"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_up_wind_scheme_8cpp.html#ac5d98296797d277411e03d4a57c54475">lobattoco</a> [5] = {0.1, 0.5444444444444444, 0.7111111111111111, 0.5444444444444444, 0.1}</td></tr>
+<tr class="separator:ac5d98296797d277411e03d4a57c54475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >Four classical upwind schemes for LINEAR hyperbolic equations </p>
+<dl class="section author"><dt>作者</dt><dd>R.Y. Han (<a href="#" onclick="location.href='mai'+'lto:'+'han'+'ru'+'oyu'+'21'+'@gs'+'ca'+'ep.'+'ac'+'.cn'; return false;">hanru<span class="obfuscator">.nosp@m.</span>oyu2<span class="obfuscator">.nosp@m.</span>1@gsc<span class="obfuscator">.nosp@m.</span>aep.<span class="obfuscator">.nosp@m.</span>ac.cn</a>) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.01 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2022-05-17</dd></dl>
+<p>Used four classical 1st order upwind schemes to solve the linear hyperbolic equation: u_t + a u_x = 0, in which a is a constant. The four schemes are: Godunov scheme, Lax-Friedrichs scheme, Lax-Wendroff scheme and Warming-Beam scheme. <br  />
+  
+<span style="font-weight: bold">History</span> 
+ </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Project   </th><th class="markdownTableHeadNone">Version   </th><th class="markdownTableHeadNone">Auther   </th><th class="markdownTableHeadNone">Date   </th><th class="markdownTableHeadNone">Describe    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Riemann Solvers <br  />
+ and Numerical Methods <br  />
+ for Fluid Dynamics   </td><td class="markdownTableBodyNone">V1.01   </td><td class="markdownTableBodyNone">R.Y. Han   </td><td class="markdownTableBodyNone">5.17.2022   </td><td class="markdownTableBodyNone">4 upwind schemes for linear hyperbolic equations   </td></tr>
+</table>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2022 R.Y. Han. All Rights Reserved. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a38b4064b6105d6acafe7d8bbf4ffb654" name="a38b4064b6105d6acafe7d8bbf4ffb654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b4064b6105d6acafe7d8bbf4ffb654">&#9670;&nbsp;</a></span>conservativeScheme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * conservativeScheme </td>
+          <td>(</td>
+          <td class="paramtype">double(*)(double, double)&#160;</td>
+          <td class="paramname"><em>flux</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1/2} (u_{i-1}, u_i) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flux</td><td>The numerical flux function, can be chosen as godunov flux or other censervative fluxes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the numerical results at the final time T </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00169">169</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_cgraph" id="a_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_cgraph">
+<area shape="rect" title="The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1..." alt="" coords="5,5,145,32"/>
+<area shape="rect" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8" title="The initial value function." alt="" coords="193,5,236,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_icgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_icgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_icgraph" id="a_up_wind_scheme_8cpp_a38b4064b6105d6acafe7d8bbf4ffb654_icgraph">
+<area shape="rect" title="The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1..." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a380d0ad29e39dccf06db706e076eb7a1" name="a380d0ad29e39dccf06db706e076eb7a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380d0ad29e39dccf06db706e076eb7a1">&#9670;&nbsp;</a></span>Godunov()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Godunov </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ul</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Godunov flux (at the point x_{i+1/2}) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ul</td><td>: value at the cell i </td></tr>
+    <tr><td class="paramname">ur</td><td>: value at the cell i+1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>f_{i+1/2}^{god} </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>Only for linear equations </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00132">132</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_cgraph" id="a_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_cgraph">
+<area shape="rect" title="Godunov flux (at the point x_{i+1/2})" alt="" coords="5,5,77,32"/>
+<area shape="rect" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e" title="The flux function" alt="" coords="125,5,164,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_icgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_icgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_icgraph" id="a_up_wind_scheme_8cpp_a380d0ad29e39dccf06db706e076eb7a1_icgraph">
+<area shape="rect" title="Godunov flux (at the point x_{i+1/2})" alt="" coords="104,5,176,32"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a556dbc8c886c1e22bf72645c5ce76f43" name="a556dbc8c886c1e22bf72645c5ce76f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556dbc8c886c1e22bf72645c5ce76f43">&#9670;&nbsp;</a></span>LFflux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double LFflux </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ul</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lax-Fridrichs flux( at the point x_{i+1/2}) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ul</td><td>: value at the cell i </td></tr>
+    <tr><td class="paramname">ur</td><td>: value at the cell i+1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>f_{i+1/2}^{fl} </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00147">147</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_cgraph" id="a_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_cgraph">
+<area shape="rect" title="Lax&#45;Fridrichs flux( at the point x_{i+1/2})" alt="" coords="5,5,63,32"/>
+<area shape="rect" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e" title="The flux function" alt="" coords="111,5,149,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_icgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_icgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_icgraph" id="a_up_wind_scheme_8cpp_a556dbc8c886c1e22bf72645c5ce76f43_icgraph">
+<area shape="rect" title="Lax&#45;Fridrichs flux( at the point x_{i+1/2})" alt="" coords="104,5,161,32"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a50faba20b4d0b7eaa89d2a61da7057c0" name="a50faba20b4d0b7eaa89d2a61da7057c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50faba20b4d0b7eaa89d2a61da7057c0">&#9670;&nbsp;</a></span>LWflux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double LWflux </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ul</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lax-Wendroff flux ( at the point x_{i+1/2}) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ul</td><td>: value at the cell i </td></tr>
+    <tr><td class="paramname">ur</td><td>: value at the cell i+1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>f_{i+1/2}^{LW} </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00154">154</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_cgraph" id="a_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_cgraph">
+<area shape="rect" title="Lax&#45;Wendroff flux ( at the point x_{i+1/2})" alt="" coords="5,5,68,32"/>
+<area shape="rect" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e" title="The flux function" alt="" coords="116,5,155,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_icgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_icgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_icgraph" id="a_up_wind_scheme_8cpp_a50faba20b4d0b7eaa89d2a61da7057c0_icgraph">
+<area shape="rect" title="Lax&#45;Wendroff flux ( at the point x_{i+1/2})" alt="" coords="104,5,167,32"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00109">109</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="a_up_wind_scheme_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,108,56,135"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654" title="The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1..." alt="" coords="224,20,364,47"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1" title="Godunov flux (at the point x_{i+1/2})" alt="" coords="104,32,176,59"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43" title="Lax&#45;Fridrichs flux( at the point x_{i+1/2})" alt="" coords="111,83,169,109"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0" title="Lax&#45;Wendroff flux ( at the point x_{i+1/2})" alt="" coords="109,133,171,160"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97" title="Plot the results of the numerical solution and the exact solution" alt="" coords="119,235,161,261"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6" title="Warming and Beam flux (at the point x_{i+1/2})" alt="" coords="108,184,172,211"/>
+<area shape="rect" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8" title="The initial value function." alt="" coords="412,133,455,160"/>
+<area shape="rect" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e" title="The flux function" alt="" coords="275,108,313,135"/>
+<area shape="rect" href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76" title="conpute the exact solution to the equation u_t + u_x = 0" alt="" coords="260,184,328,211"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e8f0953b1eaab15b5b0c0db91f22e97" name="a7e8f0953b1eaab15b5b0c0db91f22e97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8f0953b1eaab15b5b0c0db91f22e97">&#9670;&nbsp;</a></span>plot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void plot </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>uh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Plot the results of the numerical solution and the exact solution </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uh</td><td>: the numerical solution solved by different schemes </td></tr>
+    <tr><td class="paramname">fn</td><td>: filename </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00220">220</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_cgraph" id="a_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_cgraph">
+<area shape="rect" title="Plot the results of the numerical solution and the exact solution" alt="" coords="5,5,48,32"/>
+<area shape="rect" href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76" title="conpute the exact solution to the equation u_t + u_x = 0" alt="" coords="96,5,164,32"/>
+<area shape="rect" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8" title="The initial value function." alt="" coords="212,5,255,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_icgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_icgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_icgraph" id="a_up_wind_scheme_8cpp_a7e8f0953b1eaab15b5b0c0db91f22e97_icgraph">
+<area shape="rect" title="Plot the results of the numerical solution and the exact solution" alt="" coords="104,5,147,32"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a30a7082c0d696dcd59ada37bde0299e6" name="a30a7082c0d696dcd59ada37bde0299e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a7082c0d696dcd59ada37bde0299e6">&#9670;&nbsp;</a></span>WBflux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double WBflux </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ul</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Warming and Beam flux (at the point x_{i+1/2}) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ul</td><td>: value at the cell i </td></tr>
+    <tr><td class="paramname">ur</td><td>: value at the cell i+1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>f_{i+1/2}^{WB} </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00162">162</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_cgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_cgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_cgraph" id="a_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_cgraph">
+<area shape="rect" title="Warming and Beam flux (at the point x_{i+1/2})" alt="" coords="5,5,69,32"/>
+<area shape="rect" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e" title="The flux function" alt="" coords="117,5,156,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_icgraph.png" border="0" usemap="#a_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_icgraph" alt=""/></div>
+<map name="a_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_icgraph" id="a_up_wind_scheme_8cpp_a30a7082c0d696dcd59ada37bde0299e6_icgraph">
+<area shape="rect" title="Warming and Beam flux (at the point x_{i+1/2})" alt="" coords="104,5,168,32"/>
+<area shape="rect" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ac5d98296797d277411e03d4a57c54475" name="ac5d98296797d277411e03d4a57c54475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d98296797d277411e03d4a57c54475">&#9670;&nbsp;</a></span>lobattoco</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double lobattoco[5] = {0.1, 0.5444444444444444, 0.7111111111111111, 0.5444444444444444, 0.1}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6952a69e87712af6a35b603b1b5053a2" name="a6952a69e87712af6a35b603b1b5053a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6952a69e87712af6a35b603b1b5053a2">&#9670;&nbsp;</a></span>lobattopoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double lobattopoint[5] = {-1.0, -0.6546536707079771, 0, 0.6546536707079771, 1.0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_up_wind_scheme_8cpp_source.html">UpWindScheme.cpp</a> 第 <a class="el" href="_up_wind_scheme_8cpp_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

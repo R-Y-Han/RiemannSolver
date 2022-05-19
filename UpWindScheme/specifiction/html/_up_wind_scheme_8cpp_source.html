@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/UpWindScheme/UpWindScheme.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_b27b1382bb48f0ab49a74649e2140b82.html">UpWindScheme</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">UpWindScheme.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_up_wind_scheme_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="configration_8h.html">configration.h</a>&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a6952a69e87712af6a35b603b1b5053a2">   49</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="_up_wind_scheme_8cpp.html#a6952a69e87712af6a35b603b1b5053a2">lobattopoint</a>[5] = {-1.0, -0.6546536707079771, 0, 0.6546536707079771, 1.0};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#ac5d98296797d277411e03d4a57c54475">   50</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="_up_wind_scheme_8cpp.html#ac5d98296797d277411e03d4a57c54475">lobattoco</a>[5] = {0.1, 0.5444444444444444, 0.7111111111111111, 0.5444444444444444, 0.1};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">Godunov</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">LFflux</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">LWflux</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">WBflux</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">double</span>* <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a>(<span class="keywordtype">double</span> (*flux)(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">void</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a>(<span class="keywordtype">double</span>* uh, <span class="keyword">const</span> <span class="keywordtype">char</span> *fn);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  109</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">double</span>* god = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">double</span>* lf = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>];</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">double</span>* lw = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>];</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">double</span>* wb = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>];</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fngod = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\UpWindScheme\\results\\Godunov.plt&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fnlf = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\UpWindScheme\\results\\Lax-Fridrichs.plt&quot;</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fnlw = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\UpWindScheme\\results\\Lax-Wendroff.plt&quot;</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fnwb = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\UpWindScheme\\results\\Warming-Beam.plt&quot;</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    god = <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a>(<a class="code hl_function" href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">Godunov</a>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    lf = <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a>(<a class="code hl_function" href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">LFflux</a>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    lw = <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a>(<a class="code hl_function" href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">LWflux</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    wb = <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a>(<a class="code hl_function" href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">WBflux</a>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a>(god,fngod);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a>(lf,fnlf);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a>(lw,fnlw);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a>(wb,fnwb);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    system(<span class="stringliteral">&quot;pause&quot;</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">  132</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">Godunov</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">double</span> ans;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a>&gt;=0)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        ans = <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ul);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        ans = <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ur);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">  147</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">LFflux</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">double</span> ans;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    ans = (1+<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>)/(2*<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>) * <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ul) + (<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>-1)/(2*<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>) * <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ur);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">  154</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">LWflux</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">double</span> ans;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    ans = (1+<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>)* ul /2 + (1-<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>) * ur /2;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    ans = <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ans);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">  162</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">WBflux</a>(<span class="keywordtype">double</span> ul, <span class="keywordtype">double</span> ur)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">double</span> ans;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    ans = (<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>-1)*<a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ul)/2 + (3-<a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>) * <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(ur) /2;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">  169</a></span><span class="keywordtype">double</span>* <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a>(<span class="keywordtype">double</span> (*flux)(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>))</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>{</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">double</span>* uh = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>];</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">double</span>* temp = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>];</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">int</span> i, j, conter=0;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordtype">double</span> xi, ul, ur;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="comment">//Firstly initialize uh</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">for</span> (i=0; i&lt;<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>; i++)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        uh[i] = 0;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">for</span> (j=0; j&lt;5; j++)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            xi = <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a> * (<a class="code hl_variable" href="_up_wind_scheme_8cpp.html#a6952a69e87712af6a35b603b1b5053a2">lobattopoint</a>[j] + 1) / 2.0 + (i * <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a> + <a class="code hl_define" href="configration_8h.html#a428f8207615465afdfcf1d31547ffef3">left</a>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            uh[i] = uh[i] + <a class="code hl_function" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8">u_0</a>(xi) * <a class="code hl_variable" href="_up_wind_scheme_8cpp.html#ac5d98296797d277411e03d4a57c54475">lobattoco</a>[j];</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        uh[i] = uh[i] / 2.0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">while</span>(conter &lt; <a class="code hl_define" href="configration_8h.html#a0a16c4ba7a97b8fbe2b7cafe00dc7896">nt</a>)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        conter++;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="comment">//restore the results of last time step in temp</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">for</span> (i=0; i&lt;<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>; i++)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            temp[i] = uh[i];</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">if</span> (i == 0)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            ul = uh[0];</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            ul = uh[i-1];</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">if</span> (i == <a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>-1)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            ur = uh[<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>-1];</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            ur = uh[i+1];</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        uh[i] = temp[i] + (<a class="code hl_variable" href="configration_8h.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a>/<a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a>) * (flux(ul, temp[i]) - flux(temp[i],ur));</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keyword">delete</span>[] temp;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordflow">return</span> uh;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>}</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">  220</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a>(<span class="keywordtype">double</span>* uh, <span class="keyword">const</span> <span class="keywordtype">char</span>* fn)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>{</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">double</span> temp;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    fstream ff;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    remove(fn);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    ff.open(fn, ios :: out | ios :: app);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    ff&lt;&lt;<span class="stringliteral">&quot;VARIABLES=&quot;</span>&lt;&lt;<span class="stringliteral">&quot;X&quot;</span>&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;<span class="stringliteral">&quot;uh&quot;</span>&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;<span class="stringliteral">&quot;u&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">for</span> (i=0; i&lt;<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>; i++)</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        temp = (i+0.5)*<a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a> + <a class="code hl_define" href="configration_8h.html#a428f8207615465afdfcf1d31547ffef3">left</a> + <a class="code hl_define" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a> * <a class="code hl_variable" href="configration_8h.html#aee9271065c005ea3392646a1151202c8">T</a>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        ff&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;temp&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;uh[i]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;<a class="code hl_function" href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76">u_exact</a>(temp,<a class="code hl_variable" href="configration_8h.html#aee9271065c005ea3392646a1151202c8">T</a>)&lt;&lt;endl;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    ff.close();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>}</div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a30a7082c0d696dcd59ada37bde0299e6"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6">WBflux</a></div><div class="ttdeci">double WBflux(double ul, double ur)</div><div class="ttdoc">Warming and Beam flux (at the point x_{i+1/2})</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00162">UpWindScheme.cpp:162</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a380d0ad29e39dccf06db706e076eb7a1"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1">Godunov</a></div><div class="ttdeci">double Godunov(double ul, double ur)</div><div class="ttdoc">Godunov flux (at the point x_{i+1/2})</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00132">UpWindScheme.cpp:132</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a38b4064b6105d6acafe7d8bbf4ffb654"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654">conservativeScheme</a></div><div class="ttdeci">double * conservativeScheme(double(*flux)(double, double))</div><div class="ttdoc">The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1...</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00169">UpWindScheme.cpp:169</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a50faba20b4d0b7eaa89d2a61da7057c0"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0">LWflux</a></div><div class="ttdeci">double LWflux(double ul, double ur)</div><div class="ttdoc">Lax-Wendroff flux ( at the point x_{i+1/2})</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00154">UpWindScheme.cpp:154</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a556dbc8c886c1e22bf72645c5ce76f43"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43">LFflux</a></div><div class="ttdeci">double LFflux(double ul, double ur)</div><div class="ttdoc">Lax-Fridrichs flux( at the point x_{i+1/2})</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00147">UpWindScheme.cpp:147</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a6952a69e87712af6a35b603b1b5053a2"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a6952a69e87712af6a35b603b1b5053a2">lobattopoint</a></div><div class="ttdeci">const double lobattopoint[5]</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00049">UpWindScheme.cpp:49</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_a7e8f0953b1eaab15b5b0c0db91f22e97"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97">plot</a></div><div class="ttdeci">void plot(double *uh, const char *fn)</div><div class="ttdoc">Plot the results of the numerical solution and the exact solution</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00220">UpWindScheme.cpp:220</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_ac5d98296797d277411e03d4a57c54475"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#ac5d98296797d277411e03d4a57c54475">lobattoco</a></div><div class="ttdeci">const double lobattoco[5]</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00050">UpWindScheme.cpp:50</a></div></div>
+<div class="ttc" id="a_up_wind_scheme_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="_up_wind_scheme_8cpp_source.html#l00109">UpWindScheme.cpp:109</a></div></div>
+<div class="ttc" id="aconfigration_8cpp_html_a10a5e552389a56b8515a32ac360519d8"><div class="ttname"><a href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8">u_0</a></div><div class="ttdeci">double u_0(double x)</div><div class="ttdoc">The initial value function.</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00015">configration.cpp:15</a></div></div>
+<div class="ttc" id="aconfigration_8cpp_html_a6a11a5cde312e9f73cfa185ced9b9e76"><div class="ttname"><a href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76">u_exact</a></div><div class="ttdeci">double u_exact(double x, double t)</div><div class="ttdoc">conpute the exact solution to the equation u_t + u_x = 0</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00027">configration.cpp:27</a></div></div>
+<div class="ttc" id="aconfigration_8cpp_html_ad3f5b06e7da2fbf9d0f03174caff211e"><div class="ttname"><a href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a></div><div class="ttdeci">double f(double u)</div><div class="ttdoc">The flux function</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00022">configration.cpp:22</a></div></div>
+<div class="ttc" id="aconfigration_8h_html"><div class="ttname"><a href="configration_8h.html">configration.h</a></div><div class="ttdoc">Configrations of the 1st order upwind schemes.</div></div>
+<div class="ttc" id="aconfigration_8h_html_a0a16c4ba7a97b8fbe2b7cafe00dc7896"><div class="ttname"><a href="configration_8h.html#a0a16c4ba7a97b8fbe2b7cafe00dc7896">nt</a></div><div class="ttdeci">#define nt</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00020">configration.h:20</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a428f8207615465afdfcf1d31547ffef3"><div class="ttname"><a href="configration_8h.html#a428f8207615465afdfcf1d31547ffef3">left</a></div><div class="ttdeci">#define left</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00016">configration.h:16</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a4d2852f394c94e7eaac02e3c5b393654"><div class="ttname"><a href="configration_8h.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a></div><div class="ttdeci">const double dt</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00023">configration.h:23</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a8d3c3518d793541417a4845125da1ae1"><div class="ttname"><a href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a></div><div class="ttdeci">#define a</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00015">configration.h:15</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aa6e8e201edf24007dc075bfef6e8210c"><div class="ttname"><a href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a></div><div class="ttdeci">const double h</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00022">configration.h:22</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aafc737ea9ef91f59cf9acd287fb8d085"><div class="ttname"><a href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a></div><div class="ttdeci">#define c</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00019">configration.h:19</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ad5228cd48403ef9d8b632f5c7c124720"><div class="ttname"><a href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a></div><div class="ttdeci">#define n</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00018">configration.h:18</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aee9271065c005ea3392646a1151202c8"><div class="ttname"><a href="configration_8h.html#aee9271065c005ea3392646a1151202c8">T</a></div><div class="ttdeci">const double T</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00024">configration.h:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

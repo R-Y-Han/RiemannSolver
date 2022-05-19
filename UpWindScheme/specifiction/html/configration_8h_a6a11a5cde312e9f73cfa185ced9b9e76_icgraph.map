@@ -1,0 +1,5 @@
+<map id="u_exact" name="u_exact">
+<area shape="rect" id="node1" title="conpute the exact solution to the equation u_t + u_x = 0" alt="" coords="195,5,263,32"/>
+<area shape="rect" id="node2" href="$_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97" title="Plot the results of the numerical solution and the exact solution" alt="" coords="104,5,147,32"/>
+<area shape="rect" id="node3" href="$_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>

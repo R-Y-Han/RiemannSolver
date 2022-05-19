@@ -1,0 +1,8 @@
+<map id="f" name="f">
+<area shape="rect" id="node1" title="The flux function" alt="" coords="224,81,263,108"/>
+<area shape="rect" id="node2" href="$_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1" title="Godunov flux (at the point x_{i+1/2})" alt="" coords="104,5,176,32"/>
+<area shape="rect" id="node4" href="$_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43" title="Lax&#45;Fridrichs flux( at the point x_{i+1/2})" alt="" coords="111,56,169,83"/>
+<area shape="rect" id="node5" href="$_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0" title="Lax&#45;Wendroff flux ( at the point x_{i+1/2})" alt="" coords="109,107,171,133"/>
+<area shape="rect" id="node6" href="$_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6" title="Warming and Beam flux (at the point x_{i+1/2})" alt="" coords="108,157,172,184"/>
+<area shape="rect" id="node3" href="$_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,81,56,108"/>
+</map>

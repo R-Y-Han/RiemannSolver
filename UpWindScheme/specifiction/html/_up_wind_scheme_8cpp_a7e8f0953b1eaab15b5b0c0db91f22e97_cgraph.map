@@ -1,0 +1,5 @@
+<map id="plot" name="plot">
+<area shape="rect" id="node1" title="Plot the results of the numerical solution and the exact solution" alt="" coords="5,5,48,32"/>
+<area shape="rect" id="node2" href="$configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76" title="conpute the exact solution to the equation u_t + u_x = 0" alt="" coords="96,5,164,32"/>
+<area shape="rect" id="node3" href="$configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8" title="The initial value function." alt="" coords="212,5,255,32"/>
+</map>

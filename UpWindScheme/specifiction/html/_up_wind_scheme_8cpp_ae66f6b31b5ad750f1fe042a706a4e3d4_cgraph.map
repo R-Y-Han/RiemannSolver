@@ -1,0 +1,12 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,108,56,135"/>
+<area shape="rect" id="node2" href="$_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654" title="The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1..." alt="" coords="224,20,364,47"/>
+<area shape="rect" id="node4" href="$_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1" title="Godunov flux (at the point x_{i+1/2})" alt="" coords="104,32,176,59"/>
+<area shape="rect" id="node6" href="$_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43" title="Lax&#45;Fridrichs flux( at the point x_{i+1/2})" alt="" coords="111,83,169,109"/>
+<area shape="rect" id="node7" href="$_up_wind_scheme_8cpp.html#a50faba20b4d0b7eaa89d2a61da7057c0" title="Lax&#45;Wendroff flux ( at the point x_{i+1/2})" alt="" coords="109,133,171,160"/>
+<area shape="rect" id="node8" href="$_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97" title="Plot the results of the numerical solution and the exact solution" alt="" coords="119,235,161,261"/>
+<area shape="rect" id="node10" href="$_up_wind_scheme_8cpp.html#a30a7082c0d696dcd59ada37bde0299e6" title="Warming and Beam flux (at the point x_{i+1/2})" alt="" coords="108,184,172,211"/>
+<area shape="rect" id="node3" href="$configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8" title="The initial value function." alt="" coords="412,133,455,160"/>
+<area shape="rect" id="node5" href="$configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e" title="The flux function" alt="" coords="275,108,313,135"/>
+<area shape="rect" id="node9" href="$configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76" title="conpute the exact solution to the equation u_t + u_x = 0" alt="" coords="260,184,328,211"/>
+</map>

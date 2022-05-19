@@ -1,0 +1,7 @@
+<map id="u_0" name="u_0">
+<area shape="rect" id="node1" title="The initial value function." alt="" coords="408,31,451,57"/>
+<area shape="rect" id="node2" href="$_up_wind_scheme_8cpp.html#a38b4064b6105d6acafe7d8bbf4ffb654" title="The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1..." alt="" coords="104,5,244,32"/>
+<area shape="rect" id="node4" href="$configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76" title="conpute the exact solution to the equation u_t + u_x = 0" alt="" coords="292,56,360,83"/>
+<area shape="rect" id="node3" href="$_up_wind_scheme_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+<area shape="rect" id="node5" href="$_up_wind_scheme_8cpp.html#a7e8f0953b1eaab15b5b0c0db91f22e97" title="Plot the results of the numerical solution and the exact solution" alt="" coords="153,56,195,83"/>
+</map>
