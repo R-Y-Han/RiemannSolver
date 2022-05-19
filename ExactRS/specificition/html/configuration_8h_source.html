@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/ExactRS/configuration.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_1beb9c439022d7bad9e0275f428586e8.html">ExactRS</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">configuration.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="configuration_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef CONFIGURATION_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define CONFIGURATION_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="configuration_8h.html#a0acb682b8260ab1c60b918599864e2e5">   25</a></span><span class="preprocessor">#define T 0.035 </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="configuration_8h.html#aa21b4fdcf7454d40fb280b938dfd316e">   26</a></span><span class="preprocessor">#define InitialDiscontinuity 0.5    </span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="configuration_8h.html#a8d3c3518d793541417a4845125da1ae1">   27</a></span><span class="preprocessor">#define a 0.0   </span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="configuration_8h.html#ab2d05693952610f937e5acb3c4a8fa1b">   28</a></span><span class="preprocessor">#define b 1.0   </span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="configuration_8h.html#a67eba384a84bc556e09f3d8f7c5c6412">   29</a></span><span class="preprocessor">#define xi(x) ( (x - InitialDiscontinuity) )    </span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="configuration_8h.html#a42e729077189bab1dae844253dd2ad1d">   31</a></span><span class="preprocessor">#define gamma 1.4   </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="configuration_8h.html#a89bae00dda6decd77126f5a769239af5">   40</a></span><span class="preprocessor">#define rhol 1.0    </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="configuration_8h.html#af94c3c5842a759263f614d6410095d7f">   41</a></span><span class="preprocessor">#define ul 0.0  </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="configuration_8h.html#a832f1df8bda1aef828bf4263ac586911">   42</a></span><span class="preprocessor">#define pl 0.01 </span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="configuration_8h.html#a054ec6e74e7a9485154b9bc803e585ff">   43</a></span><span class="preprocessor">#define al sqrt( gamma * pl / rhol) </span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="configuration_8h.html#a3028ceb1e1ce3e1be2f9a83fd4517ed8">   52</a></span><span class="preprocessor">#define rhor 1.0    </span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="configuration_8h.html#a0cf67e9c65dbf201f4e7a348639e0184">   53</a></span><span class="preprocessor">#define ur 0.0  </span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="configuration_8h.html#ae6ec1cef77aa5035053f6078b3a2b76c">   54</a></span><span class="preprocessor">#define pr 100.0    </span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="configuration_8h.html#ae144862cdaaeb1379813311e29f5cdf6">   55</a></span><span class="preprocessor">#define ar sqrt(gamma * pr / rhor)  </span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="configuration_8h.html#a86ead5bf6198660292e62063b8d168eb">   63</a></span><span class="preprocessor">#define Al 2 / ( (gamma+1) * rhol)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="configuration_8h.html#a4feaced0d41894d5c5b74f1a687a1cc6">   64</a></span><span class="preprocessor">#define Bl (gamma - 1) * pl / (gamma + 1)</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="configuration_8h.html#a518b61a52a9d983b1227b59ef7f31a76">   65</a></span><span class="preprocessor">#define Ar  2 / ((gamma + 1) * rhor)</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="configuration_8h.html#af7514765402d91e1deef9c2c9ec2ddff">   66</a></span><span class="preprocessor">#define Br  (gamma - 1) * pr / (gamma + 1)</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">   73</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e">   75</a></span>    <a class="code hl_enumvalue" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e">rarefaction</a> = 0,    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_enumvalue" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548">shock</a> = 1           </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548">   77</a></span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfiguration_8h_html_afdc7acf19b4a9a0d39f43f9552665615"><div class="ttname"><a href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a></div><div class="ttdeci">wavetype</div><div class="ttdoc">Define the notation of nonlinear waves.</div><div class="ttdef"><b>Definition:</b> <a href="configuration_8h_source.html#l00073">configuration.h:74</a></div></div>
+<div class="ttc" id="aconfiguration_8h_html_afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548"><div class="ttname"><a href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548">shock</a></div><div class="ttdeci">@ shock</div><div class="ttdef"><b>Definition:</b> <a href="configuration_8h_source.html#l00077">configuration.h:76</a></div></div>
+<div class="ttc" id="aconfiguration_8h_html_afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e"><div class="ttname"><a href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e">rarefaction</a></div><div class="ttdeci">@ rarefaction</div><div class="ttdef"><b>Definition:</b> <a href="configuration_8h_source.html#l00075">configuration.h:75</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

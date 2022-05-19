@@ -1,0 +1,10 @@
+<map id="f_l" name="f_l">
+<area shape="rect" id="node1" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="511,81,549,108"/>
+<area shape="rect" id="node2" href="$_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="424,56,463,83"/>
+<area shape="rect" id="node8" href="$_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="267,107,336,133"/>
+<area shape="rect" id="node3" href="$_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="267,56,336,83"/>
+<area shape="rect" id="node7" href="$_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="227,5,376,32"/>
+<area shape="rect" id="node4" href="$_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,31,177,57"/>
+<area shape="rect" id="node6" href="$_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,81,179,108"/>
+<area shape="rect" id="node5" href="$_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>

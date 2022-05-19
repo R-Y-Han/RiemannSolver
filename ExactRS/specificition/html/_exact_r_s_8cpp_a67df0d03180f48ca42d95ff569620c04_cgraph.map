@@ -1,0 +1,8 @@
+<map id="getpstar" name="getpstar">
+<area shape="rect" id="node1" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="5,81,75,108"/>
+<area shape="rect" id="node2" href="$_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="129,31,167,57"/>
+<area shape="rect" id="node5" href="$_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9" title="The derivative function of f_l" alt="" coords="123,81,173,108"/>
+<area shape="rect" id="node6" href="$_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256" title="The derivative function of f_r" alt="" coords="123,132,173,159"/>
+<area shape="rect" id="node3" href="$_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="221,5,260,32"/>
+<area shape="rect" id="node4" href="$_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="221,56,260,83"/>
+</map>

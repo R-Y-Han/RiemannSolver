@@ -1,0 +1,5 @@
+<map id="conservativeScheme" name="conservativeScheme">
+<area shape="rect" id="node1" title="The general conservative scheme in which the numerical flux function only have two parameters: f_{i+1..." alt="" coords="5,31,145,57"/>
+<area shape="rect" id="node2" href="$_up_wind_scheme_8cpp.html#a13cebd95e237a6b13a0a3d6e1a6fbc19" title=" " alt="" coords="193,5,244,32"/>
+<area shape="rect" id="node3" href="$configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8" title="The initial value function." alt="" coords="197,56,240,83"/>
+</map>

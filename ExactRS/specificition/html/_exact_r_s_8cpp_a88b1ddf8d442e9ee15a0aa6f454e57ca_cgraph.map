@@ -1,0 +1,14 @@
+<map id="exactRS" name="exactRS">
+<area shape="rect" id="node1" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="5,132,77,159"/>
+<area shape="rect" id="node2" href="$_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="165,56,235,83"/>
+<area shape="rect" id="node8" href="$_exact_r_s_8cpp.html#a1ac73b4428af44b7d5c51749b718ef0f" title="Compute the density between left wave and the contact discontinuity." alt="" coords="159,157,241,184"/>
+<area shape="rect" id="node9" href="$_exact_r_s_8cpp.html#a93ee3f619e5e1cfab460157a41a225ff" title="Compute the density between right wave and the contact discontinuity." alt="" coords="158,208,242,235"/>
+<area shape="rect" id="node10" href="$_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="323,157,392,184"/>
+<area shape="rect" id="node11" href="$_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="125,5,275,32"/>
+<area shape="rect" id="node12" href="$_exact_r_s_8cpp.html#aba37d8b814e3bdbf3b2206390a68e6e6" title="Plot the picture of the exact solutions to the Euler equations." alt="" coords="179,259,221,285"/>
+<area shape="rect" id="node3" href="$_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="338,5,377,32"/>
+<area shape="rect" id="node6" href="$_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9" title="The derivative function of f_l" alt="" coords="333,56,382,83"/>
+<area shape="rect" id="node7" href="$_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256" title="The derivative function of f_r" alt="" coords="332,107,383,133"/>
+<area shape="rect" id="node4" href="$_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="440,31,479,57"/>
+<area shape="rect" id="node5" href="$_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="440,107,479,133"/>
+</map>

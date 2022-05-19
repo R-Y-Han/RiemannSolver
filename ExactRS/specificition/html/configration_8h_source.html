@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/UpWindScheme/configration.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_b27b1382bb48f0ab49a74649e2140b82.html">UpWindScheme</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">configration.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="configration_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef CONFIGRATION_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define CONFIGRATION_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">   15</a></span><span class="preprocessor">#define a 1.0     </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="configration_8h.html#a428f8207615465afdfcf1d31547ffef3">   16</a></span><span class="preprocessor">#define left -1.0    </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="configration_8h.html#ae545bf658b2c876abbbae55a7d12875f">   17</a></span><span class="preprocessor">#define right 1.0     </span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">   18</a></span><span class="preprocessor">#define n 200   </span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">   19</a></span><span class="preprocessor">#define c 0.8 </span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="configration_8h.html#a0a16c4ba7a97b8fbe2b7cafe00dc7896">   20</a></span><span class="preprocessor">#define nt  125 </span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">   22</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a> = (<a class="code hl_define" href="configration_8h.html#ae545bf658b2c876abbbae55a7d12875f">right</a> - <a class="code hl_define" href="configration_8h.html#a428f8207615465afdfcf1d31547ffef3">left</a>)/<a class="code hl_define" href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a>;  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="configration_8h.html#a4d2852f394c94e7eaac02e3c5b393654">   23</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="configration_8h.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a> = <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a> * <a class="code hl_define" href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="configration_8h.html#aee9271065c005ea3392646a1151202c8">   24</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="configration_8h.html#aee9271065c005ea3392646a1151202c8">T</a> = <a class="code hl_variable" href="configration_8h.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a> * <a class="code hl_define" href="configration_8h.html#a0a16c4ba7a97b8fbe2b7cafe00dc7896">nt</a>;    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">double</span> <a class="code hl_function" href="configration_8h.html#a10a5e552389a56b8515a32ac360519d8">u_0</a>(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">double</span> <a class="code hl_function" href="configration_8h.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(<span class="keywordtype">double</span> u);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">double</span> <a class="code hl_function" href="configration_8h.html#a6a11a5cde312e9f73cfa185ced9b9e76">u_exact</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> t);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfigration_8h_html_a0a16c4ba7a97b8fbe2b7cafe00dc7896"><div class="ttname"><a href="configration_8h.html#a0a16c4ba7a97b8fbe2b7cafe00dc7896">nt</a></div><div class="ttdeci">#define nt</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00020">configration.h:20</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a10a5e552389a56b8515a32ac360519d8"><div class="ttname"><a href="configration_8h.html#a10a5e552389a56b8515a32ac360519d8">u_0</a></div><div class="ttdeci">double u_0(double x)</div><div class="ttdoc">The initial value function.</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00015">configration.cpp:15</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a428f8207615465afdfcf1d31547ffef3"><div class="ttname"><a href="configration_8h.html#a428f8207615465afdfcf1d31547ffef3">left</a></div><div class="ttdeci">#define left</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00016">configration.h:16</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a4d2852f394c94e7eaac02e3c5b393654"><div class="ttname"><a href="configration_8h.html#a4d2852f394c94e7eaac02e3c5b393654">dt</a></div><div class="ttdeci">const double dt</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00023">configration.h:23</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a6a11a5cde312e9f73cfa185ced9b9e76"><div class="ttname"><a href="configration_8h.html#a6a11a5cde312e9f73cfa185ced9b9e76">u_exact</a></div><div class="ttdeci">double u_exact(double x, double t)</div><div class="ttdoc">conpute the exact solution to the equation u_t + u_x = 0</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00027">configration.cpp:27</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aa6e8e201edf24007dc075bfef6e8210c"><div class="ttname"><a href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a></div><div class="ttdeci">const double h</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00022">configration.h:22</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aafc737ea9ef91f59cf9acd287fb8d085"><div class="ttname"><a href="configration_8h.html#aafc737ea9ef91f59cf9acd287fb8d085">c</a></div><div class="ttdeci">#define c</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00019">configration.h:19</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ad3f5b06e7da2fbf9d0f03174caff211e"><div class="ttname"><a href="configration_8h.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a></div><div class="ttdeci">double f(double u)</div><div class="ttdoc">The flux function</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00022">configration.cpp:22</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ad5228cd48403ef9d8b632f5c7c124720"><div class="ttname"><a href="configration_8h.html#ad5228cd48403ef9d8b632f5c7c124720">n</a></div><div class="ttdeci">#define n</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00018">configration.h:18</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ae545bf658b2c876abbbae55a7d12875f"><div class="ttname"><a href="configration_8h.html#ae545bf658b2c876abbbae55a7d12875f">right</a></div><div class="ttdeci">#define right</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00017">configration.h:17</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aee9271065c005ea3392646a1151202c8"><div class="ttname"><a href="configration_8h.html#aee9271065c005ea3392646a1151202c8">T</a></div><div class="ttdeci">const double T</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00024">configration.h:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

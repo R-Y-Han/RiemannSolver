@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/UpWindScheme/configration.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_b27b1382bb48f0ab49a74649e2140b82.html">UpWindScheme</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">configration.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="configration_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="configration_8h.html">configration.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8">   15</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8">u_0</a>(<span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">double</span> ans;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    ans = exp(-x*x);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">   22</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a>(<span class="keywordtype">double</span> u)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a>*u;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76">   27</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76">u_exact</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> t)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8">u_0</a>(x-t);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="ttc" id="aconfigration_8cpp_html_a10a5e552389a56b8515a32ac360519d8"><div class="ttname"><a href="configration_8cpp.html#a10a5e552389a56b8515a32ac360519d8">u_0</a></div><div class="ttdeci">double u_0(double x)</div><div class="ttdoc">The initial value function.</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00015">configration.cpp:15</a></div></div>
+<div class="ttc" id="aconfigration_8cpp_html_a6a11a5cde312e9f73cfa185ced9b9e76"><div class="ttname"><a href="configration_8cpp.html#a6a11a5cde312e9f73cfa185ced9b9e76">u_exact</a></div><div class="ttdeci">double u_exact(double x, double t)</div><div class="ttdoc">conpute the exact solution to the equation u_t + u_x = 0</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00027">configration.cpp:27</a></div></div>
+<div class="ttc" id="aconfigration_8cpp_html_ad3f5b06e7da2fbf9d0f03174caff211e"><div class="ttname"><a href="configration_8cpp.html#ad3f5b06e7da2fbf9d0f03174caff211e">f</a></div><div class="ttdeci">double f(double u)</div><div class="ttdoc">The flux function</div><div class="ttdef"><b>Definition:</b> <a href="configration_8cpp_source.html#l00022">configration.cpp:22</a></div></div>
+<div class="ttc" id="aconfigration_8h_html"><div class="ttname"><a href="configration_8h.html">configration.h</a></div><div class="ttdoc">Configrations of the 1st order upwind schemes.</div></div>
+<div class="ttc" id="aconfigration_8h_html_a8d3c3518d793541417a4845125da1ae1"><div class="ttname"><a href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a></div><div class="ttdeci">#define a</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00015">configration.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

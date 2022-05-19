@@ -1,0 +1,5 @@
+<map id="f" name="f">
+<area shape="rect" id="node1" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="5,31,44,57"/>
+<area shape="rect" id="node2" href="$_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="92,5,131,32"/>
+<area shape="rect" id="node3" href="$_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="92,56,131,83"/>
+</map>

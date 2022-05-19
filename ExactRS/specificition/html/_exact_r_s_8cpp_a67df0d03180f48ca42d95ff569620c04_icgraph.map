@@ -1,0 +1,6 @@
+<map id="getpstar" name="getpstar">
+<area shape="rect" id="node1" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="227,31,296,57"/>
+<area shape="rect" id="node2" href="$_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" id="node4" href="$_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" id="node3" href="$_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="f" name="f">
+<area shape="rect" id="node1" title="The flux function" alt="" coords="125,31,164,57"/>
+<area shape="rect" id="node2" href="$_up_wind_scheme_8cpp.html#a380d0ad29e39dccf06db706e076eb7a1" title=" " alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node3" href="$_up_wind_scheme_8cpp.html#a556dbc8c886c1e22bf72645c5ce76f43" title="Lax&#45;Fridrichs flux( at the point x_{i+1/2})" alt="" coords="13,56,70,83"/>
+</map>

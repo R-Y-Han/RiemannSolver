@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/ExactRS/ExactRS.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_1beb9c439022d7bad9e0275f428586e8.html">ExactRS</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">ExactRS.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>the exact Riemann Solver for the 1-dimension Euler equations.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="configuration_8h_source.html">configuration.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ExactRS.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp__incl.png" border="0" usemap="#a_f_1_2_c_09_09code_2_riemann_solver_2_exact_r_s_2_exact_r_s_8cpp" alt=""/></div>
+<map name="a_f_1_2_c_09_09code_2_riemann_solver_2_exact_r_s_2_exact_r_s_8cpp" id="a_f_1_2_c_09_09code_2_riemann_solver_2_exact_r_s_2_exact_r_s_8cpp">
+<area shape="rect" title="the exact Riemann Solver for the 1&#45;dimension Euler equations." alt="" coords="59,5,240,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,77,121"/>
+<area shape="rect" title=" " alt="" coords="176,169,235,196"/>
+<area shape="rect" title=" " alt="" coords="153,95,218,121"/>
+<area shape="rect" href="configuration_8h.html" title="Configuration of the Riemann problem." alt="" coords="243,95,349,121"/>
+</map>
+</div>
+</div>
+<p><a href="_exact_r_s_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a0134a61e8c6d06aa66a163ee4a29aa36"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36">f_l</a> (double p)</td></tr>
+<tr class="memdesc:a0134a61e8c6d06aa66a163ee4a29aa36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function to compute the relation of pressure across the left nonlinear wave.  <a href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36">更多...</a><br /></td></tr>
+<tr class="separator:a0134a61e8c6d06aa66a163ee4a29aa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768cf9f122d18539e78b2197db235811"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811">f_r</a> (double p)</td></tr>
+<tr class="memdesc:a768cf9f122d18539e78b2197db235811"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function to compute the relation of pressure across the right nonlinear wave.  <a href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811">更多...</a><br /></td></tr>
+<tr class="separator:a768cf9f122d18539e78b2197db235811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aabd2d1d9855f569b06adfc59f368d7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7">f</a> (double p)</td></tr>
+<tr class="memdesc:a0aabd2d1d9855f569b06adfc59f368d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">f(p) = f_l(p) + f_r(p) + [u]  <a href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7">更多...</a><br /></td></tr>
+<tr class="separator:a0aabd2d1d9855f569b06adfc59f368d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87fe0210ce693e4836f2209cacc31d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9">f_ldp</a> (double p)</td></tr>
+<tr class="memdesc:aa87fe0210ce693e4836f2209cacc31d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The derivative function of f_l  <a href="_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9">更多...</a><br /></td></tr>
+<tr class="separator:aa87fe0210ce693e4836f2209cacc31d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af672a56b12d6017c9c095b3d28c5e256"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256">f_rdp</a> (double p)</td></tr>
+<tr class="memdesc:af672a56b12d6017c9c095b3d28c5e256"><td class="mdescLeft">&#160;</td><td class="mdescRight">The derivative function of f_r  <a href="_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256">更多...</a><br /></td></tr>
+<tr class="separator:af672a56b12d6017c9c095b3d28c5e256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67df0d03180f48ca42d95ff569620c04"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04">getpstar</a> ()</td></tr>
+<tr class="memdesc:a67df0d03180f48ca42d95ff569620c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the pressure in the star region using Newton's iterative methods. p* satisfies f(p*) = 0.  <a href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04">更多...</a><br /></td></tr>
+<tr class="separator:a67df0d03180f48ca42d95ff569620c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccc0e8988e2a9bb27ce5294fcb7f7f0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0">getustar</a> (double pstar)</td></tr>
+<tr class="memdesc:a6ccc0e8988e2a9bb27ce5294fcb7f7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the velocity in the star region.  <a href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0">更多...</a><br /></td></tr>
+<tr class="separator:a6ccc0e8988e2a9bb27ce5294fcb7f7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad155d23900fe1a539c3f35374fdab48d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d">identifyNonlinearWave</a> (double p)</td></tr>
+<tr class="memdesc:ad155d23900fe1a539c3f35374fdab48d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identify the type of two nonlinear waves.  <a href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d">更多...</a><br /></td></tr>
+<tr class="separator:ad155d23900fe1a539c3f35374fdab48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ac73b4428af44b7d5c51749b718ef0f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a1ac73b4428af44b7d5c51749b718ef0f">getrhostarl</a> (double pstar, <a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> leftwave)</td></tr>
+<tr class="memdesc:a1ac73b4428af44b7d5c51749b718ef0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the density between left wave and the contact discontinuity.  <a href="_exact_r_s_8cpp.html#a1ac73b4428af44b7d5c51749b718ef0f">更多...</a><br /></td></tr>
+<tr class="separator:a1ac73b4428af44b7d5c51749b718ef0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ee3f619e5e1cfab460157a41a225ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a93ee3f619e5e1cfab460157a41a225ff">getrhostarr</a> (double pstar, <a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> rightwave)</td></tr>
+<tr class="memdesc:a93ee3f619e5e1cfab460157a41a225ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the density between right wave and the contact discontinuity.  <a href="_exact_r_s_8cpp.html#a93ee3f619e5e1cfab460157a41a225ff">更多...</a><br /></td></tr>
+<tr class="separator:a93ee3f619e5e1cfab460157a41a225ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba37d8b814e3bdbf3b2206390a68e6e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#aba37d8b814e3bdbf3b2206390a68e6e6">plot</a> (<a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> leftwave, <a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> rightwave, double dll, double dlr, double dmid, double drl, double drr, double rhostarl, double rhostarr, double ustar, double pstar)</td></tr>
+<tr class="memdesc:aba37d8b814e3bdbf3b2206390a68e6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plot the picture of the exact solutions to the Euler equations.  <a href="_exact_r_s_8cpp.html#aba37d8b814e3bdbf3b2206390a68e6e6">更多...</a><br /></td></tr>
+<tr class="separator:aba37d8b814e3bdbf3b2206390a68e6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b1ddf8d442e9ee15a0aa6f454e57ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca">exactRS</a> ()</td></tr>
+<tr class="memdesc:a88b1ddf8d442e9ee15a0aa6f454e57ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the Euler equations exactly. <br  />
+ Compute the density, velocity, pressure and internal energy in the star region, the distance travelled of the three waves.  <a href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca">更多...</a><br /></td></tr>
+<tr class="separator:a88b1ddf8d442e9ee15a0aa6f454e57ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6a97f15421853424fb4d456d20b7ed"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed">sampling</a> (double x)</td></tr>
+<tr class="memdesc:a5e6a97f15421853424fb4d456d20b7ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the required states at the given location x at the final time T.  <a href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed">更多...</a><br /></td></tr>
+<tr class="separator:a5e6a97f15421853424fb4d456d20b7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >the exact Riemann Solver for the 1-dimension Euler equations. </p>
+<p >] </p><dl class="section author"><dt>作者</dt><dd>R.Y. Han, IAPCM @email: <a href="#" onclick="location.href='mai'+'lto:'+'han'+'ru'+'oyu'+'21'+'@gs'+'ca'+'ep.'+'ac'+'.cn'; return false;">hanru<span class="obfuscator">.nosp@m.</span>oyu2<span class="obfuscator">.nosp@m.</span>1@gsc<span class="obfuscator">.nosp@m.</span>aep.<span class="obfuscator">.nosp@m.</span>ac.cn</a> </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>5.14.2022 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>v1.01</dd></dl>
+<p>To compute the states in the star region, and identify two nonlinear waves. <br  />
+ Plot the result at a given finish time T, in a region I = [a,b]. <br  />
+  
+<span style="font-weight: bold">History</span> 
+ </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Project   </th><th class="markdownTableHeadNone">Version   </th><th class="markdownTableHeadNone">Auther   </th><th class="markdownTableHeadNone">Date   </th><th class="markdownTableHeadNone">Describe    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Riemann Solvers <br  />
+ and Numerical Methods <br  />
+ for Fluid Dynamics   </td><td class="markdownTableBodyNone">V1.01   </td><td class="markdownTableBodyNone">R.Y. Han   </td><td class="markdownTableBodyNone">5.14.2022   </td><td class="markdownTableBodyNone">sampling with Exact Riemann Solver   </td></tr>
+</table>
+<dl class="section date"><dt>日期</dt><dd>2022-05-14</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2022 R.Y. Han. All Rights Reserved. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a88b1ddf8d442e9ee15a0aa6f454e57ca" name="a88b1ddf8d442e9ee15a0aa6f454e57ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b1ddf8d442e9ee15a0aa6f454e57ca">&#9670;&nbsp;</a></span>exactRS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void exactRS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solve the Euler equations exactly. <br  />
+ Compute the density, velocity, pressure and internal energy in the star region, the distance travelled of the three waves. </p>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00453">453</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_cgraph" id="a_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_cgraph">
+<area shape="rect" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="5,132,77,159"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="165,56,235,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a1ac73b4428af44b7d5c51749b718ef0f" title="Compute the density between left wave and the contact discontinuity." alt="" coords="159,157,241,184"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a93ee3f619e5e1cfab460157a41a225ff" title="Compute the density between right wave and the contact discontinuity." alt="" coords="158,208,242,235"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="323,157,392,184"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="125,5,275,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#aba37d8b814e3bdbf3b2206390a68e6e6" title="Plot the picture of the exact solutions to the Euler equations." alt="" coords="179,259,221,285"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="338,5,377,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9" title="The derivative function of f_l" alt="" coords="333,56,382,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256" title="The derivative function of f_r" alt="" coords="332,107,383,133"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="440,31,479,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="440,107,479,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_icgraph" id="a_exact_r_s_8cpp_a88b1ddf8d442e9ee15a0aa6f454e57ca_icgraph">
+<area shape="rect" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="104,5,176,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0aabd2d1d9855f569b06adfc59f368d7" name="a0aabd2d1d9855f569b06adfc59f368d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aabd2d1d9855f569b06adfc59f368d7">&#9670;&nbsp;</a></span>f()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>f(p) = f_l(p) + f_r(p) + [u] </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[double]</td><td>p : Pressure input. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : <br  />
+ When p = p*, f(p*) = 0. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00222">222</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_cgraph" id="a_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_cgraph">
+<area shape="rect" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="5,31,44,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="92,5,131,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="92,56,131,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_icgraph" id="a_exact_r_s_8cpp_a0aabd2d1d9855f569b06adfc59f368d7_icgraph">
+<area shape="rect" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="424,31,463,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="267,5,336,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="227,56,376,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0134a61e8c6d06aa66a163ee4a29aa36" name="a0134a61e8c6d06aa66a163ee4a29aa36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0134a61e8c6d06aa66a163ee4a29aa36">&#9670;&nbsp;</a></span>f_l()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_l </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function to compute the relation of pressure across the left nonlinear wave. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[double]</td><td>p : Pressure input. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : <br  />
+ The input pressure p is larger than the pressure pl in the left region, then use the function of a shock, else use the function of a rarefaction. Return the computed value. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00182">182</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a0134a61e8c6d06aa66a163ee4a29aa36_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a0134a61e8c6d06aa66a163ee4a29aa36_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a0134a61e8c6d06aa66a163ee4a29aa36_icgraph" id="a_exact_r_s_8cpp_a0134a61e8c6d06aa66a163ee4a29aa36_icgraph">
+<area shape="rect" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="511,81,549,108"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="424,56,463,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="267,107,336,133"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="267,56,336,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="227,5,376,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,31,177,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,81,179,108"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa87fe0210ce693e4836f2209cacc31d9" name="aa87fe0210ce693e4836f2209cacc31d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87fe0210ce693e4836f2209cacc31d9">&#9670;&nbsp;</a></span>f_ldp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_ldp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The derivative function of f_l </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[doule]</td><td>p : Pressure input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00229">229</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_aa87fe0210ce693e4836f2209cacc31d9_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_aa87fe0210ce693e4836f2209cacc31d9_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_aa87fe0210ce693e4836f2209cacc31d9_icgraph" id="a_exact_r_s_8cpp_aa87fe0210ce693e4836f2209cacc31d9_icgraph">
+<area shape="rect" title="The derivative function of f_l" alt="" coords="344,31,393,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="227,31,296,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a768cf9f122d18539e78b2197db235811" name="a768cf9f122d18539e78b2197db235811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768cf9f122d18539e78b2197db235811">&#9670;&nbsp;</a></span>f_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_r </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function to compute the relation of pressure across the right nonlinear wave. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[double]</td><td>p : Pressure input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : <br  />
+ If the input pressure p is larger than the pressure pl in the right region, then use the function of a shock, else use the function of a rarefaction. Return the computed value. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00202">202</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a768cf9f122d18539e78b2197db235811_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a768cf9f122d18539e78b2197db235811_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a768cf9f122d18539e78b2197db235811_icgraph" id="a_exact_r_s_8cpp_a768cf9f122d18539e78b2197db235811_icgraph">
+<area shape="rect" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="511,81,549,108"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="424,56,463,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="267,107,336,133"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="267,56,336,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="227,5,376,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,31,177,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,81,179,108"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af672a56b12d6017c9c095b3d28c5e256" name="af672a56b12d6017c9c095b3d28c5e256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af672a56b12d6017c9c095b3d28c5e256">&#9670;&nbsp;</a></span>f_rdp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_rdp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The derivative function of f_r </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[double]</td><td>p : Pressure input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00249">249</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_af672a56b12d6017c9c095b3d28c5e256_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_af672a56b12d6017c9c095b3d28c5e256_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_af672a56b12d6017c9c095b3d28c5e256_icgraph" id="a_exact_r_s_8cpp_af672a56b12d6017c9c095b3d28c5e256_icgraph">
+<area shape="rect" title="The derivative function of f_r" alt="" coords="344,31,395,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="227,31,296,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a67df0d03180f48ca42d95ff569620c04" name="a67df0d03180f48ca42d95ff569620c04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67df0d03180f48ca42d95ff569620c04">&#9670;&nbsp;</a></span>getpstar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getpstar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the pressure in the star region using Newton's iterative methods. p* satisfies f(p*) = 0. </p>
+<dl class="section return"><dt>返回</dt><dd>[double] p* : The pressure in the star region. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00269">269</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_cgraph" id="a_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_cgraph">
+<area shape="rect" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="5,81,75,108"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="129,31,167,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9" title="The derivative function of f_l" alt="" coords="123,81,173,108"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256" title="The derivative function of f_r" alt="" coords="123,132,173,159"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="221,5,260,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="221,56,260,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_icgraph" id="a_exact_r_s_8cpp_a67df0d03180f48ca42d95ff569620c04_icgraph">
+<area shape="rect" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="227,31,296,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1ac73b4428af44b7d5c51749b718ef0f" name="a1ac73b4428af44b7d5c51749b718ef0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ac73b4428af44b7d5c51749b718ef0f">&#9670;&nbsp;</a></span>getrhostarl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getrhostarl </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td>
+          <td class="paramname"><em>leftwave</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the density between left wave and the contact discontinuity. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pstar</td><td>: the pressure in the star region </td></tr>
+    <tr><td class="paramname">leftwave</td><td>: the type of the left wave </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : the density between the left wave and the contact discontinuity. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00317">317</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a1ac73b4428af44b7d5c51749b718ef0f_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a1ac73b4428af44b7d5c51749b718ef0f_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a1ac73b4428af44b7d5c51749b718ef0f_icgraph" id="a_exact_r_s_8cpp_a1ac73b4428af44b7d5c51749b718ef0f_icgraph">
+<area shape="rect" title="Compute the density between left wave and the contact discontinuity." alt="" coords="227,31,309,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93ee3f619e5e1cfab460157a41a225ff" name="a93ee3f619e5e1cfab460157a41a225ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ee3f619e5e1cfab460157a41a225ff">&#9670;&nbsp;</a></span>getrhostarr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getrhostarr </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td>
+          <td class="paramname"><em>rightwave</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the density between right wave and the contact discontinuity. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pstar</td><td>: the pressure in the star region </td></tr>
+    <tr><td class="paramname">rightwave</td><td>: the type of the right wave </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : the density between the right wave and the contact discontinuity. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00333">333</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a93ee3f619e5e1cfab460157a41a225ff_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a93ee3f619e5e1cfab460157a41a225ff_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a93ee3f619e5e1cfab460157a41a225ff_icgraph" id="a_exact_r_s_8cpp_a93ee3f619e5e1cfab460157a41a225ff_icgraph">
+<area shape="rect" title="Compute the density between right wave and the contact discontinuity." alt="" coords="227,31,311,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ccc0e8988e2a9bb27ce5294fcb7f7f0" name="a6ccc0e8988e2a9bb27ce5294fcb7f7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ccc0e8988e2a9bb27ce5294fcb7f7f0">&#9670;&nbsp;</a></span>getustar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getustar </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the velocity in the star region. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[double]</td><td>pstar : the pressure in the star region </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>[double] u* : the velocity in the star region </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>During iteration the parameter temp may be negative, choose the suitable initial value of TRRS or mean value to avoid error. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00297">297</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_cgraph" id="a_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_cgraph">
+<area shape="rect" title="Compute the velocity in the star region." alt="" coords="5,31,75,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="123,5,161,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="123,56,161,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_icgraph" id="a_exact_r_s_8cpp_a6ccc0e8988e2a9bb27ce5294fcb7f7f0_icgraph">
+<area shape="rect" title="Compute the velocity in the star region." alt="" coords="227,31,296,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad155d23900fe1a539c3f35374fdab48d" name="ad155d23900fe1a539c3f35374fdab48d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad155d23900fe1a539c3f35374fdab48d">&#9670;&nbsp;</a></span>identifyNonlinearWave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> identifyNonlinearWave </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identify the type of two nonlinear waves. </p>
+<ol type="1">
+<li>If p* &gt; pl, the left wave is a shock;</li>
+<li>If p* &lt; pl, the left wave is a rarefaction;</li>
+<li>If p* &gt; pr, the right wave is a shock;</li>
+<li>If p* &lt; pr, the right wave is a rarefaction.</li>
+</ol>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[double]</td><td>p : pressure input, p = pl or pr </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>wavetype :<ol type="1">
+<li>When p = pl, return the type of left wave;</li>
+<li>When p = pr, return the type of right wave. </li>
+</ol>
+</dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00304">304</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_cgraph" id="a_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_cgraph">
+<area shape="rect" title="Identify the type of two nonlinear waves." alt="" coords="5,31,155,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="203,31,241,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="289,5,328,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="289,56,328,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_icgraph" id="a_exact_r_s_8cpp_ad155d23900fe1a539c3f35374fdab48d_icgraph">
+<area shape="rect" title="Identify the type of two nonlinear waves." alt="" coords="227,31,376,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="105,5,177,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a5e6a97f15421853424fb4d456d20b7ed" title="Get the required states at the given location x at the final time T." alt="" coords="104,56,179,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00175">175</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="a_exact_r_s_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,56,159"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="104,132,176,159"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="264,56,333,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a1ac73b4428af44b7d5c51749b718ef0f" title="Compute the density between left wave and the contact discontinuity." alt="" coords="257,157,340,184"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a93ee3f619e5e1cfab460157a41a225ff" title="Compute the density between right wave and the contact discontinuity." alt="" coords="257,208,341,235"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="421,157,491,184"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="224,5,373,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#aba37d8b814e3bdbf3b2206390a68e6e6" title="Plot the picture of the exact solutions to the Euler equations." alt="" coords="277,259,320,285"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="437,5,475,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9" title="The derivative function of f_l" alt="" coords="431,56,481,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256" title="The derivative function of f_r" alt="" coords="431,107,481,133"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="539,31,577,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="539,107,577,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aba37d8b814e3bdbf3b2206390a68e6e6" name="aba37d8b814e3bdbf3b2206390a68e6e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba37d8b814e3bdbf3b2206390a68e6e6">&#9670;&nbsp;</a></span>plot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void plot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td>
+          <td class="paramname"><em>leftwave</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="configuration_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td>
+          <td class="paramname"><em>rightwave</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dlr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dmid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>drl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>drr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rhostarl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rhostarr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ustar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Plot the picture of the exact solutions to the Euler equations. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">leftwave</td><td>: type of the left wave </td></tr>
+    <tr><td class="paramname">rightwave</td><td>: type of the right wave </td></tr>
+    <tr><td class="paramname">dll</td><td>: the distance travelled of the head of the left wave </td></tr>
+    <tr><td class="paramname">dlr</td><td>: the distance travelled of the tail of the left wave </td></tr>
+    <tr><td class="paramname">dmid</td><td>: the distance travelled of the contact discontinuity </td></tr>
+    <tr><td class="paramname">drl</td><td>: the distance travelled of the tail of the right wave </td></tr>
+    <tr><td class="paramname">drr</td><td>: the distance travelled of the head of the right wave </td></tr>
+    <tr><td class="paramname">rhostarl</td><td>: density between left region and contact discontinuity </td></tr>
+    <tr><td class="paramname">rhostarr</td><td>: density between contact discontinuity and right region </td></tr>
+    <tr><td class="paramname">ustar</td><td>: velocity in the star region </td></tr>
+    <tr><td class="paramname">pstar</td><td>: pressure in the star region </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00349">349</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_aba37d8b814e3bdbf3b2206390a68e6e6_icgraph.png" border="0" usemap="#a_exact_r_s_8cpp_aba37d8b814e3bdbf3b2206390a68e6e6_icgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_aba37d8b814e3bdbf3b2206390a68e6e6_icgraph" id="a_exact_r_s_8cpp_aba37d8b814e3bdbf3b2206390a68e6e6_icgraph">
+<area shape="rect" title="Plot the picture of the exact solutions to the Euler equations." alt="" coords="224,5,267,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="104,5,176,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e6a97f15421853424fb4d456d20b7ed" name="a5e6a97f15421853424fb4d456d20b7ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6a97f15421853424fb4d456d20b7ed">&#9670;&nbsp;</a></span>sampling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * sampling </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the required states at the given location x at the final time T. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>: given location </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double* : a vector of 4 components: density, velocity, pressure, internal energy. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_exact_r_s_8cpp_source.html">ExactRS.cpp</a> 第 <a class="el" href="_exact_r_s_8cpp_source.html#l00521">521</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_exact_r_s_8cpp_a5e6a97f15421853424fb4d456d20b7ed_cgraph.png" border="0" usemap="#a_exact_r_s_8cpp_a5e6a97f15421853424fb4d456d20b7ed_cgraph" alt=""/></div>
+<map name="a_exact_r_s_8cpp_a5e6a97f15421853424fb4d456d20b7ed_cgraph" id="a_exact_r_s_8cpp_a5e6a97f15421853424fb4d456d20b7ed_cgraph">
+<area shape="rect" title="Get the required states at the given location x at the final time T." alt="" coords="5,107,80,133"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a67df0d03180f48ca42d95ff569620c04" title="Compute the pressure in the star region using Newton&#39;s iterative methods. p* satisfies f(p*) = 0." alt="" coords="168,56,237,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a1ac73b4428af44b7d5c51749b718ef0f" title="Compute the density between left wave and the contact discontinuity." alt="" coords="161,157,244,184"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a93ee3f619e5e1cfab460157a41a225ff" title="Compute the density between right wave and the contact discontinuity." alt="" coords="161,208,245,235"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a6ccc0e8988e2a9bb27ce5294fcb7f7f0" title="Compute the velocity in the star region." alt="" coords="325,157,395,184"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#ad155d23900fe1a539c3f35374fdab48d" title="Identify the type of two nonlinear waves." alt="" coords="128,5,277,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0aabd2d1d9855f569b06adfc59f368d7" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="341,5,379,32"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#aa87fe0210ce693e4836f2209cacc31d9" title="The derivative function of f_l" alt="" coords="335,56,385,83"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#af672a56b12d6017c9c095b3d28c5e256" title="The derivative function of f_r" alt="" coords="335,107,385,133"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a0134a61e8c6d06aa66a163ee4a29aa36" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="443,31,481,57"/>
+<area shape="rect" href="_exact_r_s_8cpp.html#a768cf9f122d18539e78b2197db235811" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="443,107,481,133"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

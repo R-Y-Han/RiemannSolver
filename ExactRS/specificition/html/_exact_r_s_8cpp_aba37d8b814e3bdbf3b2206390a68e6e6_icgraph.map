@@ -1,0 +1,5 @@
+<map id="plot" name="plot">
+<area shape="rect" id="node1" title="Plot the picture of the exact solutions to the Euler equations." alt="" coords="224,5,267,32"/>
+<area shape="rect" id="node2" href="$_exact_r_s_8cpp.html#a88b1ddf8d442e9ee15a0aa6f454e57ca" title="Solve the Euler equations exactly. &#160;&#160;Compute the density, velocity, pressure and internal energy in t..." alt="" coords="104,5,176,32"/>
+<area shape="rect" id="node3" href="$_exact_r_s_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
