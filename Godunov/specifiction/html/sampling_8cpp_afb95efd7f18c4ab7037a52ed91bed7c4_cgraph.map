@@ -1,0 +1,5 @@
+<map id="getustar" name="getustar">
+<area shape="rect" id="node1" title="Compute the velocity in the star region." alt="" coords="5,31,75,57"/>
+<area shape="rect" id="node2" href="$sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="123,5,161,32"/>
+<area shape="rect" id="node3" href="$sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="123,56,161,83"/>
+</map>

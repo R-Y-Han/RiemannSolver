@@ -18,9 +18,13 @@
  * @author R.Y. Han (hanruoyu21@gscaep.ac.cn)
  * @brief The second version of Godunov scheme in which the CFL like condition is dt \leq dx/S_{max}.
  * The scheme can be written in a conservative form, where the numerical flux f_{i+1/2} is the exact flux 
- * evaluated with the exact Riemann solver.
+ * evaluated with the exact Riemann solver. The scheme deals with transmissive B.C..
  * @version 1.01
  * @date 2022-05-21
+ * 
+ * @attention 
+ * -# Only works for 1D Euler equations.
+ * -# Only works for transmissive boundary conditions.
  * 
  * @copyright Copyright (c) 2022 R.Y. Han, All Rights Reserved.
  * 
@@ -52,14 +56,14 @@ double* flux(double *states);
 void Initial(double **un);
 
 /**
- * @brief Godunov flux
+ * @brief Godunov flux evaluated at point x_{j+1/2}
  * 
  * @param un : Numerical results at step t_n
- * @param j : The index of the local Riemann problem
+ * @param j : The index of the local Riemann problem RP(I_j,I_{j+1})
  * @return f_{j+1/2}
  * @note The input un are the primary variables (rho, u, p) but the flux is evaluated with conservative variables
  */
-double* Godunovflux(double *states, int j);
+double* Godunovflux(double **states, int j);
 
 /**
  * @brief Choose the time step to ensure CFL like condition.
@@ -73,7 +77,7 @@ double choosedt(double **states);
 /**
  * @brief The conservative schemes, in which the numerical flux is Godunov flux.
  * 
- * @return Numerical reusults at step t_{n+1}.
+ * @return Numerical reusults at final time T.
  */
 double** conservativeScheme();
 
@@ -170,7 +174,7 @@ double choosedt(double **states)
     smax = 0;
     for (int j=0; j<N; j++)
     {
-        temp = sqrt((gamma-1)* states[j][2] / states[j][0]);    /** a_j */
+        temp = sqrt(gamma * states[j][2] / states[j][0]);    /** a_j */
         temp = abs(states[j][1]) + temp;    /** |u_j| + a_j */
 
         if (temp > smax)
@@ -205,6 +209,7 @@ double** conservativeScheme()
     {
         un[j][0] = states[j][0];    /** rho */
         un[j][1] = states[j][0] * states[j][1]; /** rho * u */
+
         un[j][2] = states[j][2] / ((gamma-1) * states[j][0]);  /** e */
         un[j][2] = states[j][0] * ( 0.5 * states[j][1] * states[j][1] + un[j][2]);  /** E */
     }
@@ -225,11 +230,12 @@ double** conservativeScheme()
 
         /** time evolution */
         temp = un;
+        /** at this time temp and states represents the conservative and primary variables of time t_n */
 
         for (j=0; j<N; j++)
         {
-            f1 = Godunovflux(states,j-1);
-            f2 = Godunovflux(states,j);
+            f1 = Godunovflux(states,j-1);   /**< f_{i-1/2} */
+            f2 = Godunovflux(states,j);     /**< f_{i+1/2} */
             for (i=0; i<3; i++)
             {
                 un[j][i] = temp[j][i] + dt * ( f1[i] - f2[i] )/h;
@@ -240,7 +246,7 @@ double** conservativeScheme()
         {
             states[j][0] = un[j][0];  /** rho */
             states[j][1] = un[j][1] / un[j][0]; /** u */
-            states[j][2] = un[j][2] / un[j][0]- 0.5*un[j][1] * un[j][1];   /** e */
+            states[j][2] = un[j][2] / un[j][0]- 0.5*un[j][1] * un[j][1] / (un[j][0] * un[j][0]);   /** e */
             states[j][2] = states[j][2] * (gamma-1) * un[j][0]; /** p */
         }
 

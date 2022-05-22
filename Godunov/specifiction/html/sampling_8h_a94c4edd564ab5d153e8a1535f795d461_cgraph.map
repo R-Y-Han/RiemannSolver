@@ -1,0 +1,6 @@
+<map id="identifyNonlinearWave" name="identifyNonlinearWave">
+<area shape="rect" id="node1" title="Identify the type of two nonlinear waves." alt="" coords="5,31,155,57"/>
+<area shape="rect" id="node2" href="$sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="203,31,241,57"/>
+<area shape="rect" id="node3" href="$sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="289,5,328,32"/>
+<area shape="rect" id="node4" href="$sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="289,56,328,83"/>
+</map>

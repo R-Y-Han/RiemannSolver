@@ -1,0 +1,13 @@
+<map id="sampling" name="sampling">
+<area shape="rect" id="node1" title="Get the required states at the given location x at the final time T." alt="" coords="5,107,80,133"/>
+<area shape="rect" id="node2" href="$sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="168,56,237,83"/>
+<area shape="rect" id="node8" href="$sampling_8cpp.html#a9a28473a015b23cdd998232f8c8bf0e0" title="Compute the density between left wave and the contact discontinuity." alt="" coords="161,157,244,184"/>
+<area shape="rect" id="node9" href="$sampling_8cpp.html#a98e9cabb7204a05cf9b5330076d1b639" title="Compute the density between right wave and the contact discontinuity." alt="" coords="161,208,245,235"/>
+<area shape="rect" id="node10" href="$sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="325,157,395,184"/>
+<area shape="rect" id="node11" href="$sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="128,5,277,32"/>
+<area shape="rect" id="node3" href="$sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="341,5,379,32"/>
+<area shape="rect" id="node6" href="$sampling_8cpp.html#a201f9ebee5714f8e5d263b830fada34a" title="The derivative function of f_l" alt="" coords="335,56,385,83"/>
+<area shape="rect" id="node7" href="$sampling_8cpp.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7" title="The derivative function of f_r" alt="" coords="335,107,385,133"/>
+<area shape="rect" id="node4" href="$sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="443,31,481,57"/>
+<area shape="rect" id="node5" href="$sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="443,107,481,133"/>
+</map>

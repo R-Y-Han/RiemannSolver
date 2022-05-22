@@ -1,0 +1,20 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,56,133"/>
+<area shape="rect" id="node2" href="$_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,69,244,96"/>
+<area shape="rect" id="node18" href="$_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,132,195,159"/>
+<area shape="rect" id="node3" href="$_gudunov_8cpp.html#a6554b58ea81a0f4464205e9a6fc272a3" title="Choose the time step to ensure CFL like condition." alt="" coords="301,5,375,32"/>
+<area shape="rect" id="node4" href="$_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,56,384,83"/>
+<area shape="rect" id="node17" href="$_gudunov_8cpp.html#ac29d8040703e5f85f2d0efd7e8e75fd4" title="Initialize the primary states." alt="" coords="312,107,364,133"/>
+<area shape="rect" id="node5" href="$_gudunov_8cpp.html#a6446fe66662143fe35ff00c457ab9da9" title="The exact flux in Euler equations with conservative variables;" alt="" coords="448,56,491,83"/>
+<area shape="rect" id="node6" href="$sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,132,507,159"/>
+<area shape="rect" id="node7" href="$sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="595,81,664,108"/>
+<area shape="rect" id="node13" href="$sampling_8cpp.html#a9a28473a015b23cdd998232f8c8bf0e0" title="Compute the density between left wave and the contact discontinuity." alt="" coords="588,183,671,209"/>
+<area shape="rect" id="node14" href="$sampling_8cpp.html#a98e9cabb7204a05cf9b5330076d1b639" title="Compute the density between right wave and the contact discontinuity." alt="" coords="587,233,671,260"/>
+<area shape="rect" id="node15" href="$sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="752,183,821,209"/>
+<area shape="rect" id="node16" href="$sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="555,31,704,57"/>
+<area shape="rect" id="node8" href="$sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="767,31,806,57"/>
+<area shape="rect" id="node11" href="$sampling_8cpp.html#a201f9ebee5714f8e5d263b830fada34a" title="The derivative function of f_l" alt="" coords="762,81,811,108"/>
+<area shape="rect" id="node12" href="$sampling_8cpp.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7" title="The derivative function of f_r" alt="" coords="761,132,812,159"/>
+<area shape="rect" id="node9" href="$sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="869,56,908,83"/>
+<area shape="rect" id="node10" href="$sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="869,132,908,159"/>
+</map>

@@ -30,7 +30,7 @@ enum wavetype
  * @param p : Pressure input.  
  * @param statesl : States of the left region in the local Riemann problem. Statesl = {rhol, ul, pl}
  * @return double : \n 
- * The input pressure p is larger than the pressure pl in the left region,
+ * If the input pressure p is larger than the pressure pl in the left region,
  * then use the function of a shock, else use the function of a rarefaction. Return the computed value.
  */
 double f_l(double p, double* statesl);
@@ -138,7 +138,7 @@ double getrhostarr(double pstar, double* statesr, wavetype rightwave);
 /**
  * @brief Get the required states at the given location x at the final time T.
  * 
- * @param x : given location
+ * @param x : Distance between given location and the location of the discontinuity
  * @param t : given time
  * @param statesl : Left states of the local Riemann problem
  * @param statesr : Right states of the local Riemann problem

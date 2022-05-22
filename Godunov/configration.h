@@ -27,7 +27,7 @@
 #define a 0.0   /**< left end */
 #define b 1.0   /**< right end */
 
-#define gamma 1.4   /** ratio of the specific heats. */
+#define gamma 1.4   /**< ratio of the specific heats. */
 /** @} */
 
 /**
@@ -55,11 +55,12 @@
 /** @} */
 
 /**
+ * @name Decomposition parameters
  * @brief Define the parameters of the uniform decomposition. Time step dt to be chosen.
- * 
+ * @{
  */
 const int N=500;   /**< Total numbers of the cells */
 const double h=(b-a)/N;   /**< Spacial step length */
 const double CFL=0.5; /**< CFL number */
-
+/** @} */
 #endif

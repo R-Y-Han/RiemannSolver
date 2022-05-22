@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/Godunov/configration.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_0492467d035ae5da3326dcac98607850.html">Godunov</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">configration.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="configration_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef CONFIGURATION_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define CONFIGURATION_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">   25</a></span><span class="preprocessor">#define T 0.2 </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="configration_8h.html#aa21b4fdcf7454d40fb280b938dfd316e">   26</a></span><span class="preprocessor">#define InitialDiscontinuity 0.5    </span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">   27</a></span><span class="preprocessor">#define a 0.0   </span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="configration_8h.html#ab2d05693952610f937e5acb3c4a8fa1b">   28</a></span><span class="preprocessor">#define b 1.0   </span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">   30</a></span><span class="preprocessor">#define gamma 1.4   </span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="configration_8h.html#a09f66852a56fe89e8ed15c57a3fe0e5b">   39</a></span><span class="preprocessor">#define rhol_ini 1.0    </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="configration_8h.html#af4d8d68b03290da76eb57c718194c97a">   40</a></span><span class="preprocessor">#define ul_ini 0.0  </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="configration_8h.html#aba34aa95de6ad9ba65678d505c5f2e0f">   41</a></span><span class="preprocessor">#define pl_ini 1.0 </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="configration_8h.html#a1cfda4a02cdfcab8e8014b267b7b1373">   42</a></span><span class="preprocessor">#define al_ini sqrt( gamma * pl_ini / rhol_ini) </span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="configration_8h.html#a71d3094b9daf70c0817b65fe5562eb34">   51</a></span><span class="preprocessor">#define rhor_ini 0.125    </span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="configration_8h.html#a53a0962f4edf306e2471b2014c7ec850">   52</a></span><span class="preprocessor">#define ur_ini 0.0  </span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="configration_8h.html#aefd69d80fefa37f5cd887c8cc7611a6f">   53</a></span><span class="preprocessor">#define pr_ini 0.1    </span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="configration_8h.html#a74de8ca2758f0f1a88df0a0107d1a48d">   54</a></span><span class="preprocessor">#define ar_ini sqrt(gamma * pr_ini / rhor_ini)  </span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">   62</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>=500;   </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">   63</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a>=(<a class="code hl_define" href="configration_8h.html#ab2d05693952610f937e5acb3c4a8fa1b">b</a>-<a class="code hl_define" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a>)/<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>;   </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="configration_8h.html#af623ae3531c6ae9765d0af5e9635e7d3">   64</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="configration_8h.html#af623ae3531c6ae9765d0af5e9635e7d3">CFL</a>=0.5; </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfigration_8h_html_a8d3c3518d793541417a4845125da1ae1"><div class="ttname"><a href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a></div><div class="ttdeci">#define a</div><div class="ttdoc">left end</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00027">configration.h:27</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aa6e8e201edf24007dc075bfef6e8210c"><div class="ttname"><a href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a></div><div class="ttdeci">const double h</div><div class="ttdoc">Spacial step length</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00063">configration.h:63</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdoc">Total numbers of the cells</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00062">configration.h:62</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ab2d05693952610f937e5acb3c4a8fa1b"><div class="ttname"><a href="configration_8h.html#ab2d05693952610f937e5acb3c4a8fa1b">b</a></div><div class="ttdeci">#define b</div><div class="ttdoc">right end</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00028">configration.h:28</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_af623ae3531c6ae9765d0af5e9635e7d3"><div class="ttname"><a href="configration_8h.html#af623ae3531c6ae9765d0af5e9635e7d3">CFL</a></div><div class="ttdeci">const double CFL</div><div class="ttdoc">CFL number</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00064">configration.h:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

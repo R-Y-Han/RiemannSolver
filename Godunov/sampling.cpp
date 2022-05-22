@@ -11,7 +11,6 @@
 
 #include "sampling.h"
 #include <cmath>
-#include <iostream>
 using namespace std;
 
 double f_l(double p, double* statesl)

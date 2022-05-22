@@ -1,0 +1,12 @@
+<map id="f_r" name="f_r">
+<area shape="rect" id="node1" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="869,81,908,108"/>
+<area shape="rect" id="node2" href="$sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="767,56,806,83"/>
+<area shape="rect" id="node10" href="$sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="752,107,821,133"/>
+<area shape="rect" id="node3" href="$sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="595,5,664,32"/>
+<area shape="rect" id="node9" href="$sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="555,56,704,83"/>
+<area shape="rect" id="node4" href="$sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,56,507,83"/>
+<area shape="rect" id="node5" href="$_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,31,384,57"/>
+<area shape="rect" id="node8" href="$_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,81,195,108"/>
+<area shape="rect" id="node6" href="$_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,31,244,57"/>
+<area shape="rect" id="node7" href="$_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="getustar" name="getustar">
+<area shape="rect" id="node1" title="Compute the velocity in the star region." alt="" coords="555,31,624,57"/>
+<area shape="rect" id="node2" href="$sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" id="node3" href="$_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" id="node6" href="$_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" id="node4" href="$_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" id="node5" href="$_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>

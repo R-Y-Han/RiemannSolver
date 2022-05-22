@@ -1,0 +1,14 @@
+<map id="plot" name="plot">
+<area shape="rect" id="node1" title="Plot the numerical results at the final time T." alt="" coords="5,107,48,133"/>
+<area shape="rect" id="node2" href="$sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="96,107,171,133"/>
+<area shape="rect" id="node3" href="$sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="259,56,328,83"/>
+<area shape="rect" id="node9" href="$sampling_8cpp.html#a9a28473a015b23cdd998232f8c8bf0e0" title="Compute the density between left wave and the contact discontinuity." alt="" coords="252,157,335,184"/>
+<area shape="rect" id="node10" href="$sampling_8cpp.html#a98e9cabb7204a05cf9b5330076d1b639" title="Compute the density between right wave and the contact discontinuity." alt="" coords="251,208,335,235"/>
+<area shape="rect" id="node11" href="$sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="416,157,485,184"/>
+<area shape="rect" id="node12" href="$sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="219,5,368,32"/>
+<area shape="rect" id="node4" href="$sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="431,5,470,32"/>
+<area shape="rect" id="node7" href="$sampling_8cpp.html#a201f9ebee5714f8e5d263b830fada34a" title="The derivative function of f_l" alt="" coords="426,56,475,83"/>
+<area shape="rect" id="node8" href="$sampling_8cpp.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7" title="The derivative function of f_r" alt="" coords="425,107,476,133"/>
+<area shape="rect" id="node5" href="$sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="533,31,572,57"/>
+<area shape="rect" id="node6" href="$sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="533,107,572,133"/>
+</map>

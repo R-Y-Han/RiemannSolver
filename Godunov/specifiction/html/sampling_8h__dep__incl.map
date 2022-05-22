@@ -1,0 +1,5 @@
+<map id="F:/C++code/RiemannSolver/Godunov/sampling.h" name="F:/C++code/RiemannSolver/Godunov/sampling.h">
+<area shape="rect" id="node1" title="Smpling states with exact Riemann solver" alt="" coords="108,5,289,47"/>
+<area shape="rect" id="node2" href="$_gudunov_8cpp.html" title="The second version of Godunov scheme in which the CFL like condition is dt \leq dx/S_{max}...." alt="" coords="5,95,187,136"/>
+<area shape="rect" id="node3" href="$sampling_8cpp.html" title="Exact Riemann solver for the sampling process." alt="" coords="211,95,392,136"/>
+</map>

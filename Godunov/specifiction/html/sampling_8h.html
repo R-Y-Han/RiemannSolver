@@ -1,0 +1,898 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/Godunov/sampling.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_0492467d035ae5da3326dcac98607850.html">Godunov</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">sampling.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Smpling states with exact Riemann solver  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="configration_8h_source.html">configration.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+sampling.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h__incl.png" border="0" usemap="#a_f_1_2_c_09_09code_2_riemann_solver_2_godunov_2sampling_8h" alt=""/></div>
+<map name="a_f_1_2_c_09_09code_2_riemann_solver_2_godunov_2sampling_8h" id="a_f_1_2_c_09_09code_2_riemann_solver_2_godunov_2sampling_8h">
+<area shape="rect" title="Smpling states with exact Riemann solver" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="configration_8h.html" title=" " alt="" coords="47,95,145,121"/>
+<area shape="rect" title=" " alt="" coords="67,169,125,196"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h__dep__incl.png" border="0" usemap="#a_f_1_2_c_09_09code_2_riemann_solver_2_godunov_2sampling_8hdep" alt=""/></div>
+<map name="a_f_1_2_c_09_09code_2_riemann_solver_2_godunov_2sampling_8hdep" id="a_f_1_2_c_09_09code_2_riemann_solver_2_godunov_2sampling_8hdep">
+<area shape="rect" title="Smpling states with exact Riemann solver" alt="" coords="108,5,289,47"/>
+<area shape="rect" href="_gudunov_8cpp.html" title="The second version of Godunov scheme in which the CFL like condition is dt \leq dx/S_{max}...." alt="" coords="5,95,187,136"/>
+<area shape="rect" href="sampling_8cpp.html" title="Exact Riemann solver for the sampling process." alt="" coords="211,95,392,136"/>
+</map>
+</div>
+</div>
+<p><a href="sampling_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:afdc7acf19b4a9a0d39f43f9552665615"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> { <a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e">rarefaction</a> = 0
+, <a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548">shock</a> = 1
+ }</td></tr>
+<tr class="memdesc:afdc7acf19b4a9a0d39f43f9552665615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the notation of nonlinear waves.  <a href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">更多...</a><br /></td></tr>
+<tr class="separator:afdc7acf19b4a9a0d39f43f9552665615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a365b909b79389d654179db27bbd16b4d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a365b909b79389d654179db27bbd16b4d">f_l</a> (double p, double *statesl)</td></tr>
+<tr class="memdesc:a365b909b79389d654179db27bbd16b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function to compute the relation of pressure across the left nonlinear wave.  <a href="sampling_8h.html#a365b909b79389d654179db27bbd16b4d">更多...</a><br /></td></tr>
+<tr class="separator:a365b909b79389d654179db27bbd16b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8c3255ec6800d613a40d3974976550"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#aec8c3255ec6800d613a40d3974976550">f_r</a> (double p, double *statesr)</td></tr>
+<tr class="memdesc:aec8c3255ec6800d613a40d3974976550"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function to compute the relation of pressure across the right nonlinear wave.  <a href="sampling_8h.html#aec8c3255ec6800d613a40d3974976550">更多...</a><br /></td></tr>
+<tr class="separator:aec8c3255ec6800d613a40d3974976550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca7c280673caa72531748c2edc4661f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a6ca7c280673caa72531748c2edc4661f">f</a> (double p, double *statesl, double *statesr)</td></tr>
+<tr class="memdesc:a6ca7c280673caa72531748c2edc4661f"><td class="mdescLeft">&#160;</td><td class="mdescRight">f(p) = f_l(p) + f_r(p) + [u]  <a href="sampling_8h.html#a6ca7c280673caa72531748c2edc4661f">更多...</a><br /></td></tr>
+<tr class="separator:a6ca7c280673caa72531748c2edc4661f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201f9ebee5714f8e5d263b830fada34a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a201f9ebee5714f8e5d263b830fada34a">f_ldp</a> (double p, double *statesl)</td></tr>
+<tr class="memdesc:a201f9ebee5714f8e5d263b830fada34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The derivative function of f_l  <a href="sampling_8h.html#a201f9ebee5714f8e5d263b830fada34a">更多...</a><br /></td></tr>
+<tr class="separator:a201f9ebee5714f8e5d263b830fada34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a142eb9b69cb6c8b6c2cecdf8cfdf7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7">f_rdp</a> (double p, double *statesr)</td></tr>
+<tr class="memdesc:a35a142eb9b69cb6c8b6c2cecdf8cfdf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The derivative function of f_r  <a href="sampling_8h.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7">更多...</a><br /></td></tr>
+<tr class="separator:a35a142eb9b69cb6c8b6c2cecdf8cfdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab76510dd6eb0f506e6ee2fa9d7911acf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#ab76510dd6eb0f506e6ee2fa9d7911acf">getpstar</a> (double *statesl, double *statesr)</td></tr>
+<tr class="memdesc:ab76510dd6eb0f506e6ee2fa9d7911acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the pressure in the star region using Newton's iterative methods.  <a href="sampling_8h.html#ab76510dd6eb0f506e6ee2fa9d7911acf">更多...</a><br /></td></tr>
+<tr class="separator:ab76510dd6eb0f506e6ee2fa9d7911acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb95efd7f18c4ab7037a52ed91bed7c4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#afb95efd7f18c4ab7037a52ed91bed7c4">getustar</a> (double pstar, double *statesl, double *statesr)</td></tr>
+<tr class="memdesc:afb95efd7f18c4ab7037a52ed91bed7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the velocity in the star region.  <a href="sampling_8h.html#afb95efd7f18c4ab7037a52ed91bed7c4">更多...</a><br /></td></tr>
+<tr class="separator:afb95efd7f18c4ab7037a52ed91bed7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c4edd564ab5d153e8a1535f795d461"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a94c4edd564ab5d153e8a1535f795d461">identifyNonlinearWave</a> (double p, double *statesl, double *statesr)</td></tr>
+<tr class="memdesc:a94c4edd564ab5d153e8a1535f795d461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identify the type of two nonlinear waves.  <a href="sampling_8h.html#a94c4edd564ab5d153e8a1535f795d461">更多...</a><br /></td></tr>
+<tr class="separator:a94c4edd564ab5d153e8a1535f795d461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a28473a015b23cdd998232f8c8bf0e0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a9a28473a015b23cdd998232f8c8bf0e0">getrhostarl</a> (double pstar, double *statesl, <a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> leftwave)</td></tr>
+<tr class="memdesc:a9a28473a015b23cdd998232f8c8bf0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the density between left wave and the contact discontinuity.  <a href="sampling_8h.html#a9a28473a015b23cdd998232f8c8bf0e0">更多...</a><br /></td></tr>
+<tr class="separator:a9a28473a015b23cdd998232f8c8bf0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e9cabb7204a05cf9b5330076d1b639"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#a98e9cabb7204a05cf9b5330076d1b639">getrhostarr</a> (double pstar, double *statesr, <a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> rightwave)</td></tr>
+<tr class="memdesc:a98e9cabb7204a05cf9b5330076d1b639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the density between right wave and the contact discontinuity.  <a href="sampling_8h.html#a98e9cabb7204a05cf9b5330076d1b639">更多...</a><br /></td></tr>
+<tr class="separator:a98e9cabb7204a05cf9b5330076d1b639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae22f4f44ea5597ac67364eeedf9c9f"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sampling_8h.html#abae22f4f44ea5597ac67364eeedf9c9f">sampling</a> (double x, double t, double *statesl, double *statesr)</td></tr>
+<tr class="memdesc:abae22f4f44ea5597ac67364eeedf9c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the required states at the given location x at the final time T.  <a href="sampling_8h.html#abae22f4f44ea5597ac67364eeedf9c9f">更多...</a><br /></td></tr>
+<tr class="separator:abae22f4f44ea5597ac67364eeedf9c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >Smpling states with exact Riemann solver </p>
+<dl class="section author"><dt>作者</dt><dd>R.Y. Han (<a href="#" onclick="location.href='mai'+'lto:'+'han'+'ru'+'oyu'+'21'+'@gs'+'ca'+'ep.'+'ac'+'.cn'; return false;">hanru<span class="obfuscator">.nosp@m.</span>oyu2<span class="obfuscator">.nosp@m.</span>1@gsc<span class="obfuscator">.nosp@m.</span>aep.<span class="obfuscator">.nosp@m.</span>ac.cn</a>) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2022-05-21</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2022 R.Y. Han, All Rights Reserved. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8h_source.html">sampling.h</a> 中定义.</p>
+</div><h2 class="groupheader">枚举类型说明</h2>
+<a id="afdc7acf19b4a9a0d39f43f9552665615" name="afdc7acf19b4a9a0d39f43f9552665615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc7acf19b4a9a0d39f43f9552665615">&#9670;&nbsp;</a></span>wavetype</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define the notation of nonlinear waves. </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e" name="afdc7acf19b4a9a0d39f43f9552665615ad46da7b6882677114b5ec55af3e6689e"></a>rarefaction&#160;</td><td class="fielddoc"><p >rarefaction 0 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548" name="afdc7acf19b4a9a0d39f43f9552665615ab78a2689aaef41c0eaca46abcfeb3548"></a>shock&#160;</td><td class="fielddoc"><p >shock 1 </p>
+</td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="sampling_8h_source.html">sampling.h</a> 第 <a class="el" href="sampling_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a6ca7c280673caa72531748c2edc4661f" name="a6ca7c280673caa72531748c2edc4661f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca7c280673caa72531748c2edc4661f">&#9670;&nbsp;</a></span>f()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>f(p) = f_l(p) + f_r(p) + [u] </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: Pressure input. </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : <br  />
+ When p = p*, f(p*) = 0. </dd></dl>
+<p >ur = statesl[1], ur = statesr[1]</p>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00071">71</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a6ca7c280673caa72531748c2edc4661f_cgraph.png" border="0" usemap="#asampling_8h_a6ca7c280673caa72531748c2edc4661f_cgraph" alt=""/></div>
+<map name="asampling_8h_a6ca7c280673caa72531748c2edc4661f_cgraph" id="asampling_8h_a6ca7c280673caa72531748c2edc4661f_cgraph">
+<area shape="rect" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="5,31,44,57"/>
+<area shape="rect" href="sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="92,5,131,32"/>
+<area shape="rect" href="sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="92,56,131,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a6ca7c280673caa72531748c2edc4661f_icgraph.png" border="0" usemap="#asampling_8h_a6ca7c280673caa72531748c2edc4661f_icgraph" alt=""/></div>
+<map name="asampling_8h_a6ca7c280673caa72531748c2edc4661f_icgraph" id="asampling_8h_a6ca7c280673caa72531748c2edc4661f_icgraph">
+<area shape="rect" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="752,31,791,57"/>
+<area shape="rect" href="sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="595,5,664,32"/>
+<area shape="rect" href="sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="555,56,704,83"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a365b909b79389d654179db27bbd16b4d" name="a365b909b79389d654179db27bbd16b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a365b909b79389d654179db27bbd16b4d">&#9670;&nbsp;</a></span>f_l()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_l </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function to compute the relation of pressure across the left nonlinear wave. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: Pressure input. <br  />
+ </td></tr>
+    <tr><td class="paramname">statesl</td><td>: States of the left region in the local Riemann problem. Statesl = {rhol, ul, pl} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : <br  />
+ If the input pressure p is larger than the pressure pl in the left region, then use the function of a shock, else use the function of a rarefaction. Return the computed value. </dd></dl>
+<p >&lt; statesl = {rhol, ul, pl}</p>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00016">16</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a365b909b79389d654179db27bbd16b4d_icgraph.png" border="0" usemap="#asampling_8h_a365b909b79389d654179db27bbd16b4d_icgraph" alt=""/></div>
+<map name="asampling_8h_a365b909b79389d654179db27bbd16b4d_icgraph" id="asampling_8h_a365b909b79389d654179db27bbd16b4d_icgraph">
+<area shape="rect" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="869,81,908,108"/>
+<area shape="rect" href="sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="767,56,806,83"/>
+<area shape="rect" href="sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="752,107,821,133"/>
+<area shape="rect" href="sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="595,5,664,32"/>
+<area shape="rect" href="sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="555,56,704,83"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,56,507,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,31,384,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,81,195,108"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,31,244,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a201f9ebee5714f8e5d263b830fada34a" name="a201f9ebee5714f8e5d263b830fada34a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201f9ebee5714f8e5d263b830fada34a">&#9670;&nbsp;</a></span>f_ldp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_ldp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The derivative function of f_l </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: Pressure input </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00078">78</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a201f9ebee5714f8e5d263b830fada34a_icgraph.png" border="0" usemap="#asampling_8h_a201f9ebee5714f8e5d263b830fada34a_icgraph" alt=""/></div>
+<map name="asampling_8h_a201f9ebee5714f8e5d263b830fada34a_icgraph" id="asampling_8h_a201f9ebee5714f8e5d263b830fada34a_icgraph">
+<area shape="rect" title="The derivative function of f_l" alt="" coords="672,31,721,57"/>
+<area shape="rect" href="sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="555,31,624,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aec8c3255ec6800d613a40d3974976550" name="aec8c3255ec6800d613a40d3974976550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8c3255ec6800d613a40d3974976550">&#9670;&nbsp;</a></span>f_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_r </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function to compute the relation of pressure across the right nonlinear wave. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: Pressure input </td></tr>
+    <tr><td class="paramname">statesr</td><td>: States in the right region of the local Riemann problem. Statesr = {rhor, ur, pr} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : <br  />
+ If the input pressure p is larger than the pressure pl in the right region, then use the function of a shock, else use the function of a rarefaction. Return the computed value. </dd></dl>
+<p >statesr = { rhor, ur, pr}</p>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00044">44</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_aec8c3255ec6800d613a40d3974976550_icgraph.png" border="0" usemap="#asampling_8h_aec8c3255ec6800d613a40d3974976550_icgraph" alt=""/></div>
+<map name="asampling_8h_aec8c3255ec6800d613a40d3974976550_icgraph" id="asampling_8h_aec8c3255ec6800d613a40d3974976550_icgraph">
+<area shape="rect" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="869,81,908,108"/>
+<area shape="rect" href="sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="767,56,806,83"/>
+<area shape="rect" href="sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="752,107,821,133"/>
+<area shape="rect" href="sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="595,5,664,32"/>
+<area shape="rect" href="sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="555,56,704,83"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,56,507,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,31,384,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,81,195,108"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,31,244,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35a142eb9b69cb6c8b6c2cecdf8cfdf7" name="a35a142eb9b69cb6c8b6c2cecdf8cfdf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a142eb9b69cb6c8b6c2cecdf8cfdf7">&#9670;&nbsp;</a></span>f_rdp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f_rdp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The derivative function of f_r </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: Pressure input </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00103">103</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a35a142eb9b69cb6c8b6c2cecdf8cfdf7_icgraph.png" border="0" usemap="#asampling_8h_a35a142eb9b69cb6c8b6c2cecdf8cfdf7_icgraph" alt=""/></div>
+<map name="asampling_8h_a35a142eb9b69cb6c8b6c2cecdf8cfdf7_icgraph" id="asampling_8h_a35a142eb9b69cb6c8b6c2cecdf8cfdf7_icgraph">
+<area shape="rect" title="The derivative function of f_r" alt="" coords="672,31,723,57"/>
+<area shape="rect" href="sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="555,31,624,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab76510dd6eb0f506e6ee2fa9d7911acf" name="ab76510dd6eb0f506e6ee2fa9d7911acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab76510dd6eb0f506e6ee2fa9d7911acf">&#9670;&nbsp;</a></span>getpstar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getpstar </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the pressure in the star region using Newton's iterative methods. </p>
+<p >p* satisfies f(p*) = 0. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>[double] p* : The pressure in the star region. </dd></dl>
+<p >Initial pstar with TRRS</p>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00128">128</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_cgraph.png" border="0" usemap="#asampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_cgraph" alt=""/></div>
+<map name="asampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_cgraph" id="asampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_cgraph">
+<area shape="rect" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="5,81,75,108"/>
+<area shape="rect" href="sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="129,31,167,57"/>
+<area shape="rect" href="sampling_8cpp.html#a201f9ebee5714f8e5d263b830fada34a" title="The derivative function of f_l" alt="" coords="123,81,173,108"/>
+<area shape="rect" href="sampling_8cpp.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7" title="The derivative function of f_r" alt="" coords="123,132,173,159"/>
+<area shape="rect" href="sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="221,5,260,32"/>
+<area shape="rect" href="sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="221,56,260,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_icgraph.png" border="0" usemap="#asampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_icgraph" alt=""/></div>
+<map name="asampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_icgraph" id="asampling_8h_ab76510dd6eb0f506e6ee2fa9d7911acf_icgraph">
+<area shape="rect" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="555,31,624,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a28473a015b23cdd998232f8c8bf0e0" name="a9a28473a015b23cdd998232f8c8bf0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a28473a015b23cdd998232f8c8bf0e0">&#9670;&nbsp;</a></span>getrhostarl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getrhostarl </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td>
+          <td class="paramname"><em>leftwave</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the density between left wave and the contact discontinuity. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pstar</td><td>: the pressure in the star region </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">leftwave</td><td>: the type of the left wave </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : the density between the left wave and the contact discontinuity. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00198">198</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a9a28473a015b23cdd998232f8c8bf0e0_icgraph.png" border="0" usemap="#asampling_8h_a9a28473a015b23cdd998232f8c8bf0e0_icgraph" alt=""/></div>
+<map name="asampling_8h_a9a28473a015b23cdd998232f8c8bf0e0_icgraph" id="asampling_8h_a9a28473a015b23cdd998232f8c8bf0e0_icgraph">
+<area shape="rect" title="Compute the density between left wave and the contact discontinuity." alt="" coords="555,31,637,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a98e9cabb7204a05cf9b5330076d1b639" name="a98e9cabb7204a05cf9b5330076d1b639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e9cabb7204a05cf9b5330076d1b639">&#9670;&nbsp;</a></span>getrhostarr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getrhostarr </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a>&#160;</td>
+          <td class="paramname"><em>rightwave</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the density between right wave and the contact discontinuity. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pstar</td><td>: the pressure in the star region </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">rightwave</td><td>: the type of the right wave </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>double : the density between the right wave and the contact discontinuity. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00217">217</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a98e9cabb7204a05cf9b5330076d1b639_icgraph.png" border="0" usemap="#asampling_8h_a98e9cabb7204a05cf9b5330076d1b639_icgraph" alt=""/></div>
+<map name="asampling_8h_a98e9cabb7204a05cf9b5330076d1b639_icgraph" id="asampling_8h_a98e9cabb7204a05cf9b5330076d1b639_icgraph">
+<area shape="rect" title="Compute the density between right wave and the contact discontinuity." alt="" coords="555,31,639,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afb95efd7f18c4ab7037a52ed91bed7c4" name="afb95efd7f18c4ab7037a52ed91bed7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb95efd7f18c4ab7037a52ed91bed7c4">&#9670;&nbsp;</a></span>getustar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getustar </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the velocity in the star region. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pstar</td><td>: the pressure in the star region </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>u* : the velocity in the star region </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>During iteration the parameter temp may be negative, choose the suitable initial value of TRRS or mean value to avoid error. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00175">175</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_cgraph.png" border="0" usemap="#asampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_cgraph" alt=""/></div>
+<map name="asampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_cgraph" id="asampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_cgraph">
+<area shape="rect" title="Compute the velocity in the star region." alt="" coords="5,31,75,57"/>
+<area shape="rect" href="sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="123,5,161,32"/>
+<area shape="rect" href="sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="123,56,161,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_icgraph.png" border="0" usemap="#asampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_icgraph" alt=""/></div>
+<map name="asampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_icgraph" id="asampling_8h_afb95efd7f18c4ab7037a52ed91bed7c4_icgraph">
+<area shape="rect" title="Compute the velocity in the star region." alt="" coords="555,31,624,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a94c4edd564ab5d153e8a1535f795d461" name="a94c4edd564ab5d153e8a1535f795d461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c4edd564ab5d153e8a1535f795d461">&#9670;&nbsp;</a></span>identifyNonlinearWave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sampling_8h.html#afdc7acf19b4a9a0d39f43f9552665615">wavetype</a> identifyNonlinearWave </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identify the type of two nonlinear waves. </p>
+<ol type="1">
+<li>If p* &gt; pl, the left wave is a shock;</li>
+<li>If p* &lt; pl, the left wave is a rarefaction;</li>
+<li>If p* &gt; pr, the right wave is a shock;</li>
+<li>If p* &lt; pr, the right wave is a rarefaction.</li>
+</ol>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pressure input, p = pl or pr </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>wavetype :<ol type="1">
+<li>When p = pl, return the type of left wave;</li>
+<li>When p = pr, return the type of right wave. </li>
+</ol>
+</dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00185">185</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a94c4edd564ab5d153e8a1535f795d461_cgraph.png" border="0" usemap="#asampling_8h_a94c4edd564ab5d153e8a1535f795d461_cgraph" alt=""/></div>
+<map name="asampling_8h_a94c4edd564ab5d153e8a1535f795d461_cgraph" id="asampling_8h_a94c4edd564ab5d153e8a1535f795d461_cgraph">
+<area shape="rect" title="Identify the type of two nonlinear waves." alt="" coords="5,31,155,57"/>
+<area shape="rect" href="sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="203,31,241,57"/>
+<area shape="rect" href="sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="289,5,328,32"/>
+<area shape="rect" href="sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="289,56,328,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_a94c4edd564ab5d153e8a1535f795d461_icgraph.png" border="0" usemap="#asampling_8h_a94c4edd564ab5d153e8a1535f795d461_icgraph" alt=""/></div>
+<map name="asampling_8h_a94c4edd564ab5d153e8a1535f795d461_icgraph" id="asampling_8h_a94c4edd564ab5d153e8a1535f795d461_icgraph">
+<area shape="rect" title="Identify the type of two nonlinear waves." alt="" coords="555,31,704,57"/>
+<area shape="rect" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abae22f4f44ea5597ac67364eeedf9c9f" name="abae22f4f44ea5597ac67364eeedf9c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abae22f4f44ea5597ac67364eeedf9c9f">&#9670;&nbsp;</a></span>sampling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * sampling </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>statesr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the required states at the given location x at the final time T. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>: Distance between given location and the location of the discontinuity </td></tr>
+    <tr><td class="paramname">t</td><td>: given time </td></tr>
+    <tr><td class="paramname">statesl</td><td>: Left states of the local Riemann problem </td></tr>
+    <tr><td class="paramname">statesr</td><td>: Right states of the local Riemann problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The states at (x,T), a vector of 3 components: density, velocity, pressure. </dd></dl>
+<dl class="section note"><dt>注解</dt><dd><ol type="1">
+<li>In Godunov scheme we only need the solution at x=0.</li>
+<li>Results are primary variables.</li>
+<li>Given x = the considering location - the location of the discontinuity </li>
+</ol>
+</dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sampling_8cpp_source.html">sampling.cpp</a> 第 <a class="el" href="sampling_8cpp_source.html#l00236">236</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_cgraph.png" border="0" usemap="#asampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_cgraph" alt=""/></div>
+<map name="asampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_cgraph" id="asampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_cgraph">
+<area shape="rect" title="Get the required states at the given location x at the final time T." alt="" coords="5,107,80,133"/>
+<area shape="rect" href="sampling_8cpp.html#ab76510dd6eb0f506e6ee2fa9d7911acf" title="Compute the pressure in the star region using Newton&#39;s iterative methods." alt="" coords="168,56,237,83"/>
+<area shape="rect" href="sampling_8cpp.html#a9a28473a015b23cdd998232f8c8bf0e0" title="Compute the density between left wave and the contact discontinuity." alt="" coords="161,157,244,184"/>
+<area shape="rect" href="sampling_8cpp.html#a98e9cabb7204a05cf9b5330076d1b639" title="Compute the density between right wave and the contact discontinuity." alt="" coords="161,208,245,235"/>
+<area shape="rect" href="sampling_8cpp.html#afb95efd7f18c4ab7037a52ed91bed7c4" title="Compute the velocity in the star region." alt="" coords="325,157,395,184"/>
+<area shape="rect" href="sampling_8cpp.html#a94c4edd564ab5d153e8a1535f795d461" title="Identify the type of two nonlinear waves." alt="" coords="128,5,277,32"/>
+<area shape="rect" href="sampling_8cpp.html#a6ca7c280673caa72531748c2edc4661f" title="f(p) = f_l(p) + f_r(p) + [u]" alt="" coords="341,5,379,32"/>
+<area shape="rect" href="sampling_8cpp.html#a201f9ebee5714f8e5d263b830fada34a" title="The derivative function of f_l" alt="" coords="335,56,385,83"/>
+<area shape="rect" href="sampling_8cpp.html#a35a142eb9b69cb6c8b6c2cecdf8cfdf7" title="The derivative function of f_r" alt="" coords="335,107,385,133"/>
+<area shape="rect" href="sampling_8cpp.html#a365b909b79389d654179db27bbd16b4d" title="The function to compute the relation of pressure across the left nonlinear wave." alt="" coords="443,31,481,57"/>
+<area shape="rect" href="sampling_8cpp.html#aec8c3255ec6800d613a40d3974976550" title="The function to compute the relation of pressure across the right nonlinear wave." alt="" coords="443,107,481,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="sampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_icgraph.png" border="0" usemap="#asampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_icgraph" alt=""/></div>
+<map name="asampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_icgraph" id="asampling_8h_abae22f4f44ea5597ac67364eeedf9c9f_icgraph">
+<area shape="rect" title="Get the required states at the given location x at the final time T." alt="" coords="432,31,507,57"/>
+<area shape="rect" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99" title="Godunov flux evaluated at point x_{j+1/2}" alt="" coords="292,5,384,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946" title="Plot the numerical results at the final time T." alt="" coords="153,56,195,83"/>
+<area shape="rect" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b" title="The conservative schemes, in which the numerical flux is Godunov flux." alt="" coords="104,5,244,32"/>
+<area shape="rect" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

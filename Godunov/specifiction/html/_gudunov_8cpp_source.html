@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Riemann Solvers and Numerical Methods for Fluid Dynamics: F:/C++code/RiemannSolver/Godunov/Gudunov.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Riemann Solvers and Numerical Methods for Fluid Dynamics<span id="projectnumber">&#160;v1.01</span>
+   </div>
+   <div id="projectbrief">C++ codes for E.F. Toro&#39;s book</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_89877455476f4b08e00195d0b127180c.html">RiemannSolver</a></li><li class="navelem"><a class="el" href="dir_0492467d035ae5da3326dcac98607850.html">Godunov</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Gudunov.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_gudunov_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="configration_8h.html">configration.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="sampling_8h.html">sampling.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">double</span>* <a class="code hl_function" href="_gudunov_8cpp.html#a6446fe66662143fe35ff00c457ab9da9">flux</a>(<span class="keywordtype">double</span> *states);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> <a class="code hl_function" href="_gudunov_8cpp.html#ac29d8040703e5f85f2d0efd7e8e75fd4">Initial</a>(<span class="keywordtype">double</span> **un);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">double</span>* <a class="code hl_function" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99">Godunovflux</a>(<span class="keywordtype">double</span> **states, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">double</span> <a class="code hl_function" href="_gudunov_8cpp.html#a6554b58ea81a0f4464205e9a6fc272a3">choosedt</a>(<span class="keywordtype">double</span> **states);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">double</span>** <a class="code hl_function" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b">conservativeScheme</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> <a class="code hl_function" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946">plot</a>(<span class="keywordtype">double</span> **states);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   91</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">int</span> j;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">double</span> **states = <span class="keyword">new</span> <span class="keywordtype">double</span>*[<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>];</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        states[j] = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    states = <a class="code hl_function" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b">conservativeScheme</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_function" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946">plot</a>(states);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    system(<span class="stringliteral">&quot;pause&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#a6446fe66662143fe35ff00c457ab9da9">  106</a></span><span class="keywordtype">double</span>* <a class="code hl_function" href="_gudunov_8cpp.html#a6446fe66662143fe35ff00c457ab9da9">flux</a>(<span class="keywordtype">double</span> *states)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">double</span> *ans = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">double</span> a1, a2, a3;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    a1 = states[0] * states[1]; </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    a2 = states[0] * states[1] * states[1] + states[2]; </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    a3 = states[2] / ((<a class="code hl_define" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a>-1)*states[0]); </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    a3 = states[0] * (0.5 * states[1]*states[1] + a3);  </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    a3 = states[1] * (a3 + states[2]);  </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    ans[0] = a1;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    ans[1] = a2;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    ans[2] = a3;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#ac29d8040703e5f85f2d0efd7e8e75fd4">  124</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_gudunov_8cpp.html#ac29d8040703e5f85f2d0efd7e8e75fd4">Initial</a>(<span class="keywordtype">double</span> **un)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">double</span> x;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">int</span> j;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        x = <a class="code hl_define" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a> + (j+0.5) * <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a>;    </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">if</span> (x &lt;= <a class="code hl_define" href="configration_8h.html#aa21b4fdcf7454d40fb280b938dfd316e">InitialDiscontinuity</a>)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            un[j][0] = <a class="code hl_define" href="configration_8h.html#a09f66852a56fe89e8ed15c57a3fe0e5b">rhol_ini</a>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            un[j][1] = <a class="code hl_define" href="configration_8h.html#af4d8d68b03290da76eb57c718194c97a">ul_ini</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            un[j][2] = <a class="code hl_define" href="configration_8h.html#aba34aa95de6ad9ba65678d505c5f2e0f">pl_ini</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            un[j][0] = <a class="code hl_define" href="configration_8h.html#a71d3094b9daf70c0817b65fe5562eb34">rhor_ini</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            un[j][1] = <a class="code hl_define" href="configration_8h.html#a53a0962f4edf306e2471b2014c7ec850">ur_ini</a>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            un[j][2] = <a class="code hl_define" href="configration_8h.html#aefd69d80fefa37f5cd887c8cc7611a6f">pr_ini</a>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99">  145</a></span><span class="keywordtype">double</span>* <a class="code hl_function" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99">Godunovflux</a>(<span class="keywordtype">double</span> **states, <span class="keywordtype">int</span> j)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">double</span> *statesl, *statesr;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">double</span>* ans;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">if</span> (j == -1)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        statesl = states[0];</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        statesr = states[0];</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == <a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>-1)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        statesl = states[<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>-1];</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        statesr = states[<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>-1];</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        statesl = states[j];</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        statesr = states[j+1];</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    ans = <a class="code hl_function" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f">sampling</a>(0,<a class="code hl_define" href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>,statesl,statesr);  </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    ans = <a class="code hl_function" href="_gudunov_8cpp.html#a6446fe66662143fe35ff00c457ab9da9">flux</a>(ans);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#a6554b58ea81a0f4464205e9a6fc272a3">  170</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_gudunov_8cpp.html#a6554b58ea81a0f4464205e9a6fc272a3">choosedt</a>(<span class="keywordtype">double</span> **states)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>{</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">double</span> dt, smax, temp;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    smax = 0;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        temp = sqrt(<a class="code hl_define" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a> * states[j][2] / states[j][0]);    </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        temp = abs(states[j][1]) + temp;    </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">if</span> (temp &gt; smax)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            smax = temp;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    dt = <a class="code hl_variable" href="configration_8h.html#af623ae3531c6ae9765d0af5e9635e7d3">CFL</a> * <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a> / smax;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">return</span> dt;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b">  190</a></span><span class="keywordtype">double</span>** <a class="code hl_function" href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b">conservativeScheme</a>()</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>{</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">double</span> **states = <span class="keyword">new</span> <span class="keywordtype">double</span>* [<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>];   </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">double</span> **un = <span class="keyword">new</span> <span class="keywordtype">double</span>* [<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>];   </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">double</span> **temp = <span class="keyword">new</span> <span class="keywordtype">double</span>* [<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>];</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">double</span> *f1 = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">double</span> *f2 = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">double</span> t = 0, dt;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        states[j] = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        un[j] = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        temp[j] = <span class="keyword">new</span> <span class="keywordtype">double</span> [3];</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_function" href="_gudunov_8cpp.html#ac29d8040703e5f85f2d0efd7e8e75fd4">Initial</a>(states);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        un[j][0] = states[j][0];    </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        un[j][1] = states[j][0] * states[j][1]; </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        un[j][2] = states[j][2] / ((<a class="code hl_define" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a>-1) * states[j][0]);  </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        un[j][2] = states[j][0] * ( 0.5 * states[j][1] * states[j][1] + un[j][2]);  </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">while</span>(t&lt;<a class="code hl_define" href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">if</span> ( t + dt &gt;<a class="code hl_define" href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>)</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            dt = <a class="code hl_define" href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>-t;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            dt = <a class="code hl_function" href="_gudunov_8cpp.html#a6554b58ea81a0f4464205e9a6fc272a3">choosedt</a>(states);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        t = t + dt;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        cout&lt;&lt;t&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;dt&lt;&lt;endl;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        temp = un;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            f1 = <a class="code hl_function" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99">Godunovflux</a>(states,j-1);   </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            f2 = <a class="code hl_function" href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99">Godunovflux</a>(states,j);     </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            <span class="keywordflow">for</span> (i=0; i&lt;3; i++)</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                un[j][i] = temp[j][i] + dt * ( f1[i] - f2[i] )/<a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a>;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            }</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            states[j][0] = un[j][0];  </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            states[j][1] = un[j][1] / un[j][0]; </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            states[j][2] = un[j][2] / un[j][0]- 0.5*un[j][1] * un[j][1] / (un[j][0] * un[j][0]);   </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            states[j][2] = states[j][2] * (<a class="code hl_define" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a>-1) * un[j][0]; </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keyword">delete</span>[] un[j];</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="keyword">delete</span>[] temp[j];</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keyword">delete</span>[] un, temp;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">return</span> states;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>}</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946">  265</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946">plot</a>(<span class="keywordtype">double</span> **states)</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>{</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keywordtype">double</span> et1, et2, *temp, *sl, *sr, *x;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    temp = <span class="keyword">new</span> <span class="keywordtype">double</span>[3];</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    sl = <span class="keyword">new</span> <span class="keywordtype">double</span>[3];</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    sr = <span class="keyword">new</span> <span class="keywordtype">double</span>[3];</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    x = <span class="keyword">new</span> <span class="keywordtype">double</span> [<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>];</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordtype">int</span> j;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    sl[0] = <a class="code hl_define" href="configration_8h.html#a09f66852a56fe89e8ed15c57a3fe0e5b">rhol_ini</a>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    sl[1] = <a class="code hl_define" href="configration_8h.html#af4d8d68b03290da76eb57c718194c97a">ul_ini</a>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    sl[2] = <a class="code hl_define" href="configration_8h.html#aba34aa95de6ad9ba65678d505c5f2e0f">pl_ini</a>;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    sr[0] = <a class="code hl_define" href="configration_8h.html#a71d3094b9daf70c0817b65fe5562eb34">rhor_ini</a>;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    sr[1] = <a class="code hl_define" href="configration_8h.html#a53a0962f4edf306e2471b2014c7ec850">ur_ini</a>;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    sr[2] = <a class="code hl_define" href="configration_8h.html#aefd69d80fefa37f5cd887c8cc7611a6f">pr_ini</a>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        x[j] = <a class="code hl_define" href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a> + (j+0.5) * <a class="code hl_variable" href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a>;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fnrho = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\Godunov\\results\\density.plt&quot;</span>;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fnu = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\Godunov\\results\\velocity.plt&quot;</span>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fnp = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\Godunov\\results\\pressure.plt&quot;</span>;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* fne = <span class="stringliteral">&quot;F:\\C++code\\RiemannSolver\\Godunov\\results\\internal_energy.plt&quot;</span>;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    remove(fnrho);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    remove(fnu);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    remove(fnp);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    remove(fne);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    fstream fr, fu, fp, fe;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    fr.open(fnrho, ios :: out | ios :: app);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    fu.open(fnu, ios :: out | ios :: app);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    fp.open(fnp, ios :: out | ios :: app);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    fe.open(fne, ios :: out | ios :: app);</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    fr&lt;&lt;<span class="stringliteral">&quot;VARIABLES = X, rho_h, rho&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    fu&lt;&lt;<span class="stringliteral">&quot;VARIABLES = X, u_h, u&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    fp&lt;&lt;<span class="stringliteral">&quot;VARIABLES = X, p_h, p&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    fe&lt;&lt;<span class="stringliteral">&quot;VARIABLES = X, e_h, e&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code hl_variable" href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; j++)</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        temp = <a class="code hl_function" href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f">sampling</a>(x[j]-<a class="code hl_define" href="configration_8h.html#aa21b4fdcf7454d40fb280b938dfd316e">InitialDiscontinuity</a>,<a class="code hl_define" href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>,sl,sr);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        fr&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;x[j]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;states[j][0]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;temp[0]&lt;&lt;endl;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        fu&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;x[j]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;states[j][1]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;temp[1]&lt;&lt;endl;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        fp&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;x[j]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;states[j][2]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;temp[2]&lt;&lt;endl;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        et1 = states[j][2] / ((<a class="code hl_define" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a> - 1)* states[j][0]);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        et2 = temp[2] / ((<a class="code hl_define" href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a>-1)*temp[0]);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        fe&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;x[j]&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;et1&lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>&lt;&lt;et2&lt;&lt;endl;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    }</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    fr.close();</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    fu.close();</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    fp.close();</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    fe.close();</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">delete</span>[] sl, sr, temp;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
+<div class="ttc" id="a_gudunov_8cpp_html_a6446fe66662143fe35ff00c457ab9da9"><div class="ttname"><a href="_gudunov_8cpp.html#a6446fe66662143fe35ff00c457ab9da9">flux</a></div><div class="ttdeci">double * flux(double *states)</div><div class="ttdoc">The exact flux in Euler equations with conservative variables;</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00106">Gudunov.cpp:106</a></div></div>
+<div class="ttc" id="a_gudunov_8cpp_html_a6554b58ea81a0f4464205e9a6fc272a3"><div class="ttname"><a href="_gudunov_8cpp.html#a6554b58ea81a0f4464205e9a6fc272a3">choosedt</a></div><div class="ttdeci">double choosedt(double **states)</div><div class="ttdoc">Choose the time step to ensure CFL like condition.</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00170">Gudunov.cpp:170</a></div></div>
+<div class="ttc" id="a_gudunov_8cpp_html_a7344ac514128037fb02bfbd048ab7e99"><div class="ttname"><a href="_gudunov_8cpp.html#a7344ac514128037fb02bfbd048ab7e99">Godunovflux</a></div><div class="ttdeci">double * Godunovflux(double **states, int j)</div><div class="ttdoc">Godunov flux evaluated at point x_{j+1/2}</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00145">Gudunov.cpp:145</a></div></div>
+<div class="ttc" id="a_gudunov_8cpp_html_a8ce4ba5508187e2b0d41c9d3cfd4e946"><div class="ttname"><a href="_gudunov_8cpp.html#a8ce4ba5508187e2b0d41c9d3cfd4e946">plot</a></div><div class="ttdeci">void plot(double **states)</div><div class="ttdoc">Plot the numerical results at the final time T.</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00265">Gudunov.cpp:265</a></div></div>
+<div class="ttc" id="a_gudunov_8cpp_html_ac29d8040703e5f85f2d0efd7e8e75fd4"><div class="ttname"><a href="_gudunov_8cpp.html#ac29d8040703e5f85f2d0efd7e8e75fd4">Initial</a></div><div class="ttdeci">void Initial(double **un)</div><div class="ttdoc">Initialize the primary states.</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00124">Gudunov.cpp:124</a></div></div>
+<div class="ttc" id="a_gudunov_8cpp_html_adc76fb9f0d54c35a9ce21600f8b9828b"><div class="ttname"><a href="_gudunov_8cpp.html#adc76fb9f0d54c35a9ce21600f8b9828b">conservativeScheme</a></div><div class="ttdeci">double ** conservativeScheme()</div><div class="ttdoc">The conservative schemes, in which the numerical flux is Godunov flux.</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00190">Gudunov.cpp:190</a></div></div>
+<div class="ttc" id="a_gudunov_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="_gudunov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="_gudunov_8cpp_source.html#l00091">Gudunov.cpp:91</a></div></div>
+<div class="ttc" id="aconfigration_8h_html"><div class="ttname"><a href="configration_8h.html">configration.h</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a09f66852a56fe89e8ed15c57a3fe0e5b"><div class="ttname"><a href="configration_8h.html#a09f66852a56fe89e8ed15c57a3fe0e5b">rhol_ini</a></div><div class="ttdeci">#define rhol_ini</div><div class="ttdoc">density in the left region</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00039">configration.h:39</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a0acb682b8260ab1c60b918599864e2e5"><div class="ttname"><a href="configration_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a></div><div class="ttdeci">#define T</div><div class="ttdoc">final time</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00025">configration.h:25</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a42e729077189bab1dae844253dd2ad1d"><div class="ttname"><a href="configration_8h.html#a42e729077189bab1dae844253dd2ad1d">gamma</a></div><div class="ttdeci">#define gamma</div><div class="ttdoc">ratio of the specific heats.</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00030">configration.h:30</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a53a0962f4edf306e2471b2014c7ec850"><div class="ttname"><a href="configration_8h.html#a53a0962f4edf306e2471b2014c7ec850">ur_ini</a></div><div class="ttdeci">#define ur_ini</div><div class="ttdoc">velocity in the left region</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00052">configration.h:52</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a71d3094b9daf70c0817b65fe5562eb34"><div class="ttname"><a href="configration_8h.html#a71d3094b9daf70c0817b65fe5562eb34">rhor_ini</a></div><div class="ttdeci">#define rhor_ini</div><div class="ttdoc">density in the left region</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00051">configration.h:51</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_a8d3c3518d793541417a4845125da1ae1"><div class="ttname"><a href="configration_8h.html#a8d3c3518d793541417a4845125da1ae1">a</a></div><div class="ttdeci">#define a</div><div class="ttdoc">left end</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00027">configration.h:27</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aa21b4fdcf7454d40fb280b938dfd316e"><div class="ttname"><a href="configration_8h.html#aa21b4fdcf7454d40fb280b938dfd316e">InitialDiscontinuity</a></div><div class="ttdeci">#define InitialDiscontinuity</div><div class="ttdoc">the location of the initial discontinuity</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00026">configration.h:26</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aa6e8e201edf24007dc075bfef6e8210c"><div class="ttname"><a href="configration_8h.html#aa6e8e201edf24007dc075bfef6e8210c">h</a></div><div class="ttdeci">const double h</div><div class="ttdoc">Spacial step length</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00063">configration.h:63</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="configration_8h.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdoc">Total numbers of the cells</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00062">configration.h:62</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aba34aa95de6ad9ba65678d505c5f2e0f"><div class="ttname"><a href="configration_8h.html#aba34aa95de6ad9ba65678d505c5f2e0f">pl_ini</a></div><div class="ttdeci">#define pl_ini</div><div class="ttdoc">pressure in the left region</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00041">configration.h:41</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_aefd69d80fefa37f5cd887c8cc7611a6f"><div class="ttname"><a href="configration_8h.html#aefd69d80fefa37f5cd887c8cc7611a6f">pr_ini</a></div><div class="ttdeci">#define pr_ini</div><div class="ttdoc">pressure in the left region</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00053">configration.h:53</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_af4d8d68b03290da76eb57c718194c97a"><div class="ttname"><a href="configration_8h.html#af4d8d68b03290da76eb57c718194c97a">ul_ini</a></div><div class="ttdeci">#define ul_ini</div><div class="ttdoc">velocity in the left region</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00040">configration.h:40</a></div></div>
+<div class="ttc" id="aconfigration_8h_html_af623ae3531c6ae9765d0af5e9635e7d3"><div class="ttname"><a href="configration_8h.html#af623ae3531c6ae9765d0af5e9635e7d3">CFL</a></div><div class="ttdeci">const double CFL</div><div class="ttdoc">CFL number</div><div class="ttdef"><b>Definition:</b> <a href="configration_8h_source.html#l00064">configration.h:64</a></div></div>
+<div class="ttc" id="asampling_8cpp_html_abae22f4f44ea5597ac67364eeedf9c9f"><div class="ttname"><a href="sampling_8cpp.html#abae22f4f44ea5597ac67364eeedf9c9f">sampling</a></div><div class="ttdeci">double * sampling(double x, double t, double *statesl, double *statesr)</div><div class="ttdoc">Get the required states at the given location x at the final time T.</div><div class="ttdef"><b>Definition:</b> <a href="sampling_8cpp_source.html#l00236">sampling.cpp:236</a></div></div>
+<div class="ttc" id="asampling_8h_html"><div class="ttname"><a href="sampling_8h.html">sampling.h</a></div><div class="ttdoc">Smpling states with exact Riemann solver</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
